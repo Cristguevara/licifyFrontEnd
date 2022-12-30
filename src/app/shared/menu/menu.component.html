@@ -1,0 +1,6 @@
+<mat-selection-list #shoes [multiple]="false" class="w-64" >
+  <mat-list-option  *ngFor="let item of menu" [value]="item.text" color="primary" [selected]="item.select"
+   [routerLink]="[item.ruta]">
+  {{item.text}}
+  </mat-list-option>
+</mat-selection-list>

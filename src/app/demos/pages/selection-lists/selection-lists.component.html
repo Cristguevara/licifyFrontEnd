@@ -1,0 +1,21 @@
+<h1 class="font-bold text-xl mb-4">Selección de listas</h1>
+<p>Escoja la opción con el color "rojo" en inglés</p>
+<mat-form-field appearance="fill"  class="w-80">
+  <mat-label>Escoja la opción correcta</mat-label>
+  <mat-select [disabled]="disableSelect" [formControl]="Select">
+    <mat-option value="option1">Yellow</mat-option>
+    <mat-option value="option2" >Red</mat-option>
+    <mat-option value="option3">Blue</mat-option>
+  </mat-select>
+</mat-form-field>
+<div class="my-4" *ngIf="!disableSelect">
+  <button mat-raised-button (click)="askQuestion()" disabled="{{Select.invalid}}">Enviar</button>
+</div>
+
+<div class="my-4 flex flex-row" *ngIf="disableSelect">
+  <p class="my-2" *ngIf="check">Acertaste</p>
+  <p class="my-2" *ngIf="!check">No acertaste</p>
+  <div class="ml-2">
+    <button mat-raised-button (click)="openFeedback()" *ngIf="!check">Ver Retroalimentación</button>
+  </div>
+</div>

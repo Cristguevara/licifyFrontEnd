@@ -1,0 +1,25 @@
+<div class="w-full">
+  <h1 class="font-bold text-xl mb-4">Control deslizante</h1>
+  <p>¿Cuánto es 10/2?</p>
+  <mat-slider
+  thumbLabel
+  tickInterval="1000"
+  step="1"
+  min="0"
+  max="10"
+  aria-label="units"
+  [formControl]="form"
+  [disabled]="disabled"></mat-slider>
+
+  <div class="my-4" *ngIf="!disabled">
+    <button mat-raised-button (click)="askQuestion()" disabled="{{form.invalid}}">Enviar</button>
+  </div>
+
+  <div class="my-4 flex flex-row" *ngIf="disabled">
+    <p class="my-2" *ngIf="check">Acertaste</p>
+    <p class="my-2" *ngIf="!check">No acertaste</p>
+    <div class="ml-2">
+      <button mat-raised-button (click)="openFeedback()" *ngIf="!check">Ver Retroalimentación</button>
+    </div>
+  </div>
+</div>

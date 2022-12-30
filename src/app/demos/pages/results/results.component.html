@@ -1,0 +1,67 @@
+<h1 class="font-bold text-xl mb-4">Resultados de una evaluación</h1>
+<form [formGroup]="form" class="flex flex-col">
+
+  <p>1. Escoja la imágen que tiene un "Pug". (5 pts)</p>
+  <mat-radio-group class="grid grid-cols-3 gap-4 w-full" formControlName="first" [disabled]="disabled">
+    <div class="flex flex-col items-center">
+      <img src="http://c.files.bbci.co.uk/48DD/production/_107435681_perro1.jpg">
+      <p>Imagen del primer perrito</p>
+      <mat-radio-button  value="1">1</mat-radio-button>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://images.hola.com/imagenes/mascotas/20221020219416/razas-perros-toy/1-154-385/razas-de-perro-toy-t.jpg">
+      <p>Imagen del segundo perrito</p>
+      <mat-radio-button  value="2">2</mat-radio-button>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://fotografias.antena3.com/clipping/cmsimages01/2022/08/12/F30768A2-C006-4CF1-8701-6026559DB725/mas-4000-perros-utilizados-experimentos-cientificos-buscan-hogar-adopcion_98.jpg?crop=1920,1080,x0,y0&width=1900&height=1069&optimize=low&format=webply">
+      <p>Imagen del Tercer perrito</p>
+      <mat-radio-button  value="3">3</mat-radio-button>
+    </div>
+  </mat-radio-group>
+  <div class="my-4 flex flex-row" *ngIf="disabled">
+    <p class="my-2" *ngIf="checkFirst">Acertaste</p>
+    <p class="my-2" *ngIf="!checkFirst">No acertaste</p>
+    <div class="ml-2">
+      <button mat-raised-button (click)="openFeedback(1)" *ngIf="!checkFirst">Ver Retroalimentación</button>
+    </div>
+  </div>
+
+  <p>2. Escoja la opción con el color "rojo" en inglés. (5 pts)</p>
+  <mat-form-field appearance="fill"  class="w-80">
+    <mat-label>Escoja la opción correcta</mat-label>
+    <mat-select [disabled]="disabled" formControlName="second">
+      <mat-option value="option1">Yellow</mat-option>
+      <mat-option value="option2" >Red</mat-option>
+      <mat-option value="option3">Blue</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="my-4 flex flex-row" *ngIf="disabled">
+    <p class="my-2" *ngIf="checkSecond">Acertaste</p>
+    <p class="my-2" *ngIf="!checkSecond">No acertaste</p>
+    <div class="ml-2">
+      <button mat-raised-button (click)="openFeedback(2)" *ngIf="!checkSecond">Ver Retroalimentación</button>
+    </div>
+  </div>
+
+  <p>3. Escriba "amarillo" en inglés. (5 pts)</p>
+  <mat-form-field class="w-52" appearance="fill" >
+    <input matInput type="text"  formControlName="third" >
+  </mat-form-field>
+  <div class="my-4 flex flex-row" *ngIf="disabled">
+    <p class="my-2" *ngIf="checkThird">Acertaste</p>
+    <p class="my-2" *ngIf="!checkThird">No acertaste</p>
+    <div class="ml-2">
+      <button mat-raised-button (click)="openFeedback(3)" *ngIf="!checkThird">Ver Retroalimentación</button>
+    </div>
+  </div>
+
+  <div class="my-4" *ngIf="!disabled">
+    <button mat-raised-button  (click)="answerQuestions()" disabled="{{form.invalid}}">Enviar</button>
+  </div>
+
+  <div class="my-4 flex flex-row" *ngIf="disabled">
+    <p class="my-2" >Tu puntaje fue de {{score}} de 15 puntos totales</p>
+  </div>
+
+</form>

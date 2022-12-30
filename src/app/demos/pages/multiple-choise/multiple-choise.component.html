@@ -1,0 +1,26 @@
+<div class="flex flex-col">
+  <h1 class="font-bold text-xl mb-4">Selección múltiple</h1>
+
+  <p>¿Cuánto es 1+1?</p>
+
+  <form autocomplete="off" [formGroup]="form" >
+    <mat-radio-group class="flex flex-col" formControlName="first" [disabled]="feedbackContainer">
+      <mat-radio-button  value="1">1</mat-radio-button>
+      <mat-radio-button  value="2">2</mat-radio-button>
+      <mat-radio-button  value="3">3</mat-radio-button>
+      <mat-radio-button  value="4">4</mat-radio-button>
+    </mat-radio-group>
+  </form>
+
+  <div class="my-4" *ngIf="!feedbackContainer">
+    <button mat-raised-button (click)="askQuestion()" disabled="{{form.invalid}}">Enviar</button>
+  </div>
+
+  <div class="my-4 flex flex-row" *ngIf="feedbackContainer">
+    <p class="my-2" *ngIf="check">Acertaste</p>
+    <p class="my-2" *ngIf="!check">No acertaste</p>
+    <div class="ml-2">
+      <button mat-raised-button (click)="openFeedback()" >Ver Retroalimentación</button>
+    </div>
+  </div>
+</div>

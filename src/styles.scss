@@ -1,1 +1,185 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$proyectoDemo-primary: mat.define-palette(mat.$indigo-palette);
+$proyectoDemo-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$proyectoDemo-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$proyectoDemo-theme: mat.define-light-theme((
+  color: (
+    primary: $proyectoDemo-primary,
+    accent: $proyectoDemo-accent,
+    warn: $proyectoDemo-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($proyectoDemo-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @layer base {
+//   html {
+//     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+//   }
+// }
+
+html, body { height: 100%; }
+* {
+      font-family:'Franklin Gothic Book', 'Arial Narrow', Arial, sans-serif
+    }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0;  }
+
+.textIn
+{
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  0% {
+    transform: translate(0,-100%);
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
+
+.textOut
+{
+  animation-duration: 0.5s;
+  animation-name: slideOut;
+  animation-fill-mode: forwards;
+}
+@keyframes slideOut {
+  0% {
+    max-height: 400px;
+  }
+  100% {
+    max-height: 0;
+  }
+}
+
+.btnNext {
+  font-family: inherit;
+  font-size: 20px;
+  background: #005883;
+  color: white;
+  padding: 0.3em 0.3em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.btnNext span {
+  display: block;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnNext mat-icon {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btnNext:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.btnNext:hover mat-icon {
+  transform: translateX(1.9em) scale(1.1);
+}
+
+.btnNext:hover span {
+  transform: translateX(5em);
+}
+
+.btnNext:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+.btnBack {
+  font-family: inherit;
+  font-size: 20px;
+  background: #005883;
+  color: white;
+  padding: 0.3em 0.3em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.btnBack span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnBack mat-icon {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btnBack:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.btnBack:hover mat-icon {
+  transform: translateX(-1.6em) scale(1.1);
+}
+
+.btnBack:hover span {
+  transform: translateX(-5em);
+}
+
+.btnBack:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
