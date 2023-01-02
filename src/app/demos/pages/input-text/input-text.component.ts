@@ -38,6 +38,7 @@ export class InputTextComponent implements OnInit {
   openFeedback(): void{
     this.dialog.open(FeedbackComponent, {
       data: this.textFeedback,
+      panelClass: 'custom-dialog-container'
     });
   }
 

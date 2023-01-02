@@ -1,13 +1,13 @@
 <h1 class="font-bold text-xl mb-4">Imágenes</h1>
-
+<mat-divider></mat-divider>
 <div class="w-full flex flex-row justify-center">
   <img src="https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg" class="my-4">
 </div>
 
 
 <div class="my-4 flex flex-row justify-center w-full" >
-  <button mat-raised-button (click)="changeBtn01()" *ngIf="btn01">Descripción de la imagen</button>
-  <button mat-raised-button (click)="changeBtn01()" *ngIf="!btn01">ocultar descripción de la imagen</button>
+  <button mat-raised-button (click)="changeBtn01()" *ngIf="btn01" class="bg-[#005883] text-white">Descripción de la imagen</button>
+  <button mat-raised-button (click)="changeBtn01()" *ngIf="!btn01" class="bg-[#005883] text-white">Ocultar descripción de la imagen</button>
 </div>
 
 <div class="overflow-hidden">
@@ -20,7 +20,7 @@
 
 
 <div class="flex flex-row justify-between">
-  <button class="btnBack">
+  <button class="btnBack" [routerLink]="['/Componentes/texto']">
     <span>Anterior</span>
     <div class="svg-wrapper-1">
       <div class="svg-wrapper">
@@ -29,7 +29,7 @@
     </div>
   </button>
 
-  <button class="btnNext">
+  <button class="btnNext" [routerLink]="['/Componentes/video']" >
     <div class="svg-wrapper-1">
       <div class="svg-wrapper">
         <mat-icon class="icon-size-6 text-black-500">arrow_forward</mat-icon>

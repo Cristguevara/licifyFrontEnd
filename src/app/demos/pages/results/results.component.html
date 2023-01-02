@@ -23,7 +23,7 @@
     <p class="my-2" *ngIf="checkFirst">Acertaste</p>
     <p class="my-2" *ngIf="!checkFirst">No acertaste</p>
     <div class="ml-2">
-      <button mat-raised-button (click)="openFeedback(1)" *ngIf="!checkFirst">Ver Retroalimentación</button>
+      <button mat-raised-button (click)="openFeedback(1)" *ngIf="!checkFirst" class="bg-[#005883] text-white">Ver Retroalimentación</button>
     </div>
   </div>
 
@@ -40,7 +40,7 @@
     <p class="my-2" *ngIf="checkSecond">Acertaste</p>
     <p class="my-2" *ngIf="!checkSecond">No acertaste</p>
     <div class="ml-2">
-      <button mat-raised-button (click)="openFeedback(2)" *ngIf="!checkSecond">Ver Retroalimentación</button>
+      <button mat-raised-button (click)="openFeedback(2)" *ngIf="!checkSecond" class="bg-[#005883] text-white">Ver Retroalimentación</button>
     </div>
   </div>
 
@@ -52,12 +52,12 @@
     <p class="my-2" *ngIf="checkThird">Acertaste</p>
     <p class="my-2" *ngIf="!checkThird">No acertaste</p>
     <div class="ml-2">
-      <button mat-raised-button (click)="openFeedback(3)" *ngIf="!checkThird">Ver Retroalimentación</button>
+      <button mat-raised-button (click)="openFeedback(3)" *ngIf="!checkThird" class="bg-[#005883] text-white">Ver Retroalimentación</button>
     </div>
   </div>
 
   <div class="my-4" *ngIf="!disabled">
-    <button mat-raised-button  (click)="answerQuestions()" disabled="{{form.invalid}}">Enviar</button>
+    <button mat-raised-button  (click)="answerQuestions()" disabled="{{form.invalid}}" class="bg-[#005883] text-white">Enviar</button>
   </div>
 
   <div class="my-4 flex flex-row" *ngIf="disabled">
@@ -65,3 +65,14 @@
   </div>
 
 </form>
+
+<div class="flex flex-row justify-start">
+  <button class="btnBack" [routerLink]="['/Componentes/entrada-texto']">
+    <span>Anterior</span>
+    <div class="svg-wrapper-1">
+      <div class="svg-wrapper">
+        <mat-icon class="icon-size-6 text-black-500">arrow_back</mat-icon>
+      </div>
+    </div>
+  </button>
+</div>

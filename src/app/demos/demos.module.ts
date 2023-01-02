@@ -31,6 +31,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
 import { SwiperModule } from "swiper/angular";
 import { ResultsComponent } from './pages/results/results.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { ResultsComponent } from './pages/results/results.component';
     MatSelectModule,
     MatSliderModule,
     FormsModule,
-    SwiperModule
+    SwiperModule,
+    MatDividerModule
   ]
 })
 export class DemosModule { }

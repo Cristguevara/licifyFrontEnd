@@ -13,11 +13,14 @@ import { MenuComponent } from './shared/menu/menu.component';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatNativeDateModule} from '@angular/material/core';
+import { MenuResponsiveComponent } from './shared/menu-responsive/menu-responsive.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    MenuResponsiveComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     FormsModule,
     MatListModule,
     MatButtonModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,7 +10,7 @@ import { FeedbackComponent } from '../../components/feedback/feedback.component'
 })
 export class SliderComponent implements OnInit {
 
-  form = new FormControl(0,[Validators.required])
+  form = new FormControl(null,[Validators.required])
   disabled:boolean=false
 
   check:boolean=true
@@ -37,6 +37,7 @@ export class SliderComponent implements OnInit {
   openFeedback(): void{
     this.dialog.open(FeedbackComponent, {
       data: this.textFeedback,
+      panelClass: 'custom-dialog-container'
     });
   }
 

@@ -21,14 +21,34 @@
     </mat-radio-group>
   </form>
   <div class="my-4" *ngIf="!feedbackContainer">
-    <button mat-raised-button (click)="askQuestion()" disabled="{{form.invalid}}">Enviar</button>
+    <button mat-raised-button (click)="askQuestion()" disabled="{{form.invalid}}" class="bg-[#005883] text-white">Enviar</button>
   </div>
 
   <div class="my-4 flex flex-row" *ngIf="feedbackContainer">
     <p class="my-2" *ngIf="check">Acertaste</p>
     <p class="my-2" *ngIf="!check">No acertaste</p>
     <div class="ml-2">
-      <button mat-raised-button (click)="openFeedback()" *ngIf="!check">Ver Retroalimentación</button>
+      <button mat-raised-button (click)="openFeedback()" *ngIf="!check" class="bg-[#005883] text-white">Ver Retroalimentación</button>
     </div>
   </div>
+</div>
+
+<div class="flex flex-row justify-between">
+  <button class="btnBack" [routerLink]="['/Componentes/seleccion-listas']">
+    <span>Anterior</span>
+    <div class="svg-wrapper-1">
+      <div class="svg-wrapper">
+        <mat-icon class="icon-size-6 text-black-500">arrow_back</mat-icon>
+      </div>
+    </div>
+  </button>
+
+  <button class="btnNext" [routerLink]="['/Componentes/entrada-texto']" >
+    <div class="svg-wrapper-1">
+      <div class="svg-wrapper">
+        <mat-icon class="icon-size-6 text-black-500">arrow_forward</mat-icon>
+      </div>
+    </div>
+    <span>Siguiente</span>
+  </button>
 </div>

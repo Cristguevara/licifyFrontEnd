@@ -1,8 +1,14 @@
 <div class="flex flex-row justify-center">
   <div class="flex flex-col">
-    <p class="my-4">{{data}}</p>
-    <div class="flex justify-center">
-      <button mat-raised-button (click)="dialogRef.close()" >Cerrar</button>
+    <div class="w-full bg-[#005883] flex flex-row justify-center">
+      <p class="text-white text-2xl font-bold my-2">Retroalimentación</p>
+    </div>
+    <div class="p-4 flex flex-col items-center">
+      <mat-icon class="text-[#F0B429] material-icons-outlined">info</mat-icon>
+      <p class="my-4">{{data}}</p>
+      <div class="flex justify-center">
+        <button mat-raised-button (click)="dialogRef.close()" class="bg-[#005883] text-white">Cerrar</button>
+      </div>
     </div>
   </div>
 </div>

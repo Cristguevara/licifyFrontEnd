@@ -65,6 +65,7 @@ export class ResultsComponent implements OnInit {
     }
     this.dialog.open(FeedbackComponent, {
       data: textFeedback,
+      panelClass: 'custom-dialog-container'
     });
   }
 

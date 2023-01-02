@@ -1,6 +1,6 @@
 
   <h1 class="font-bold text-xl mb-4">Presentación de diapositivas</h1>
-  <div class="h-full flex ">
+  <div class=" flex ">
       <swiper
         [slidesPerView]="1"
         [spaceBetween]="50"
@@ -32,5 +32,25 @@
           </div>
         </ng-template>
       </swiper>
+  </div>
+
+  <div class="flex flex-row justify-between">
+    <button class="btnBack" [routerLink]="['/Componentes/control-deslizante']">
+      <span>Anterior</span>
+      <div class="svg-wrapper-1">
+        <div class="svg-wrapper">
+          <mat-icon class="icon-size-6 text-black-500">arrow_back</mat-icon>
+        </div>
+      </div>
+    </button>
+
+    <button class="btnNext" [routerLink]="['/Componentes/seleccion-listas']" >
+      <div class="svg-wrapper-1">
+        <div class="svg-wrapper">
+          <mat-icon class="icon-size-6 text-black-500">arrow_forward</mat-icon>
+        </div>
+      </div>
+      <span>Siguiente</span>
+    </button>
   </div>
 

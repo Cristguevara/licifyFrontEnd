@@ -1,12 +1,17 @@
 <div class="flex flex-row w-full justify-center">
   <div class="flex flex-col w-full max-w-screen-2xl shadow-lg shadow-gray-400">
-    <div class="w-full flex flex-row justify-center bg-[#005883] h-16">
-      <div class="flex flex-col justify-center h-full">
-        <p class="text-white text-4xl">Proyecto Demo</p>
+    <div class="w-full flex flex-row justify-center bg-[#005883]">
+      <div class="flex flex-row justify-center sm:hidden w-[20%]">
+        <button class="flex flex-col justify-center" (click)="openMenu()">
+          <mat-icon class="text-white ">menu</mat-icon>
+        </button>
+      </div>
+      <div class="flex flex-row justify-center w-[80%]">
+        <p class="text-white text-2xl sm:text-4xl m-2">Proyecto Demo</p>
       </div>
     </div>
     <div class="w-full flex flex-row" >
-      <div class="flex flex-col ">
+      <div class="flex flex-col hidden sm:flex">
         <app-menu></app-menu>
       </div>
       <div class="flex flex-row justify-center m-4 w-full">
