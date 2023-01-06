@@ -2,5 +2,6 @@
   <mat-list-option  *ngFor="let item of menu" [value]="item.text" color="primary" [selected]="item.select"
    [routerLink]="[item.ruta]">
   {{item.text}}
+  <mat-divider></mat-divider>
   </mat-list-option>
 </mat-selection-list>

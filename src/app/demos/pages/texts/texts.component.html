@@ -1,7 +1,162 @@
-<h1 class="font-bold text-xl mb-4">Lorem ipsum</h1>
+<div class="flex flex-row items-center">
+  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12">description</mat-icon>
+  <h1 class="font-bold text-xl mb-4">Lorem ipsum</h1>
+</div>
 <mat-divider></mat-divider>
 <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<div class="flex flex-row justify-end">
+<div class="h-60 w-full pl-4">
+
+  <div class="h-full w-full rounded border-b-4 border-l-4 border-b-[#005883] border-l-[#005883] relative">
+    <div class="w-full h-auto rounded bg-[#F0B429] left-[-10px] top-[-10px] absolute p-2">
+      <p class="text-justify m-0 text-white text-lg leading-none">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    </div>
+
+    <div class="h-52 w-full pl-4 absolute top-24">
+      <div class="h-full w-full rounded border-4 border-[#005883] bg-white relative">
+
+        <div class="w-full h-auto rounded bg-[#F47920] left-[-10px] top-[-10px] absolute p-2">
+          <p class="text-justify m-0 text-white text-lg leading-none">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        </div>
+
+        <div class="w-full h-auto mt-[50px] p-2 ">
+          <p class="text-justify m-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+
+      </div>
+      <div class="h-8 w-full pl-8">
+        <div class="h-16 w-full rounded-b-lg border-4 border-t-0 border-r-0 border-[#005883] bg-white relative">
+
+          <div class="h-20 w-full pl-4 absolute top-4">
+            <div class="h-full w-full rounded border-4 border-[#005883] bg-white relative p-2">
+              <p class="text-justify m-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="w-full grid grid-cols-3 gap-4 mt-44">
+
+  <div>
+    <div class="p-8 textBoxMov">
+      <h1>Why set up the literature review?</h1>
+      <p class="text-justify">The lit review is one of the most important bases for any research study since it situates the research within existing knowledge for several reasons. Any research study should explain what the reasons for the lit review are.</p>
+    </div>
+
+    <div class="flex flex-row justify-center w-full h-20 items-end">
+      <mat-icon class="flex text-[#F0B429] text-5xl w-12 h-12 iconMovVert">pan_tool_alt</mat-icon>
+    </div>
+
+    <div class="mt-1">
+
+      <button  class="bg-[#F0B429] text-black w-full text-base font-bold py-2 rounded" *ngIf="!div01" (click)="this.div01 = true" >
+        <p class="m-0">The following are some of the most common reasons.</p>
+      </button>
+
+      <div class="border-2 rounded border-[#F0B429] divBoxin overflow-hidden" *ngIf="div01">
+        <div class="flex flex-col textHorAppear">
+          <div class="flex flex-row justify-end px-2 py-1">
+            <mat-icon class="flex text-red-600 text-5xl w-12 h-12 cursor-pointer iconHov" (click)="this.div01 = false">cancel</mat-icon>
+          </div>
+          <ul class="pl-8 p-4 ">
+            <li class="list-disc">To understand and evaluate the topic area or knowledge field.</li>
+            <li class="list-disc">To discover what research has contributed to the development of the area or subject topic and how.</li>
+            <li class="list-disc">To develop a theoretical and methodological framework for the research study.</li>
+            <li class="list-disc">To give new interpretations of previous findings or combine new with old interpretations.</li>
+            <li class="list-disc">To demonstrate familiarity of the study with the topics and the scholarly contexts.</li>
+            <li class="list-disc">To identify gaps in current knowledge; to show limitations of theories and points of view; to review areas of controversy, etc. and to explain how the research study will address these problems or others.</li>
+            <li class="list-disc">To formulate areas for further research.</li>
+            <li class="list-disc">To position the study in relation to other researchers and theorists.</li>
+            <li class="list-disc">To resolve conflicts amongst seemingly contradictory previous studies.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div>
+    <div class="p-8 textBoxMovYellow">
+      <h1>Why set up the literature review?</h1>
+      <p class="text-justify">The lit review is one of the most important bases for any research study since it situates the research within existing knowledge for several reasons. Any research study should explain what the reasons for the lit review are.</p>
+    </div>
+
+    <div class="flex flex-row justify-center w-full h-20 items-end">
+      <mat-icon class="flex text-[#F47920] text-5xl w-12 h-12 iconMovVert">touch_app</mat-icon>
+    </div>
+
+    <div class="mt-1">
+
+      <button  class="bg-[#F47920] text-black w-full text-base font-bold py-2 rounded" *ngIf="!div02" (click)="this.div02 = true">
+        <p class="m-0">The following are some of the most common reasons.</p>
+      </button>
+
+      <div class="border-2 rounded border-[#F47920] divBoxin overflow-hidden" *ngIf="div02">
+        <div class="flex flex-col textHorAppear">
+          <div class="flex flex-row justify-end px-2 py-1">
+            <mat-icon class="flex text-red-600 text-5xl w-12 h-12 cursor-pointer iconHov material-icons-outlined" (click)="this.div02 = false">cancel</mat-icon>
+          </div>
+          <ul class="pl-8 p-4 ">
+            <li class="list-disc">To understand and evaluate the topic area or knowledge field.</li>
+            <li class="list-disc">To discover what research has contributed to the development of the area or subject topic and how.</li>
+            <li class="list-disc">To develop a theoretical and methodological framework for the research study.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div>
+    <div class="p-8 textBoxMovOrange">
+      <audio
+        class="w-full border-black rounded-full border"
+        controls
+        controlsList="nodownload"
+        src="../../../../assets/audios/Diapositiva4-1.mp3">
+      </audio>
+      <h1 class="font-bold text-xl mb-1">What else do I need to consider about the lit review?</h1>
+      <p class="text-justify">Check these statements and consider them when developing the review:</p>
+      <p class="text-justify ">Length and details of the review, number of citations, and whether it would include all relevant material or just recent material.</p>
+      <p class="text-justify m-0">Check these statements and consider them when developing the review:</p>
+    </div>
+
+    <div class="flex flex-row justify-center w-full h-20 items-end">
+      <mat-icon class="flex text-[#005883] text-5xl w-12 h-12 iconMovVert material-icons-outlined">pan_tool_alt</mat-icon>
+    </div>
+
+    <div class="mt-1">
+
+      <button  class="bg-[#005883] text-white w-full text-base font-bold py-2 rounded" *ngIf="!div03" (click)="this.div03 = true">
+        <p class="m-0">The following are some of the most common reasons.</p>
+      </button>
+
+      <div class="border-2 rounded border-[#005883] divBoxin overflow-hidden" *ngIf="div03">
+        <div class="flex flex-col textHorAppear">
+          <div class="flex flex-row justify-end px-2 py-1">
+            <mat-icon class="flex text-red-600 text-5xl w-12 h-12 cursor-pointer iconHov" (click)="this.div03 = false">close</mat-icon>
+          </div>
+          <ul class="pl-8 p-4 ">
+            <li class="list-disc">To understand and evaluate the topic area or knowledge field.</li>
+            <li class="list-disc">To discover what research has contributed to the development of the area or subject topic and how.</li>
+            <li class="list-disc">To develop a theoretical and methodological framework for the research study.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="flex flex-row justify-end mt-1">
   <button class="btnNext" [routerLink]="['/Componentes/imagenes']">
     <div class="svg-wrapper-1">
       <div class="svg-wrapper">
