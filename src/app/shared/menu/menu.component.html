@@ -21,7 +21,10 @@
       <mat-divider></mat-divider>
       <mat-list-option  *ngFor="let item of menuText" [value]="item.text" color="primary" [selected]="item.select"
         [routerLink]="[item.ruta]" >
-        <li class="textList">{{item.text}}</li>
+        <div class="flex flex-row items-center">
+          <li class="textList list-disc"></li>
+          <p class="textList my-2">{{item.text}}</p>
+        </div>
         <mat-divider></mat-divider>
       </mat-list-option>
     </mat-expansion-panel>
