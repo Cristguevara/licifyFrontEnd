@@ -16,15 +16,34 @@ interface MenuItem {
 export class MenuComponent  implements OnInit{
 
   menu: MenuItem[] = []
+  menuText: MenuItem[]=[]
+  expandPanel:boolean=false
 
   constructor(private location:Location, private router: Router ) { }
 
   ngOnInit(): void {
     //console.log(this.location.path())
     this.router.events.subscribe(e=>{
+      this.expandPanel=false
+
+      let menuText=[
+        {ruta: '/Componentes/texto', text: 'Texto normal' },
+        {ruta: '/Componentes/texto/mapa-conceptual', text: 'Mapa conceptual texto' },
+        {ruta: '/Componentes/texto/caja-de-texto-animada', text: 'Cajas de texto animadas y audio' },
+        {ruta: '/Componentes/texto/iconos-botones-para-desplegar-texto', text: 'Iconos y botones para desplegar texto' }
+      ]
+      menuText=menuText.map((e:any)=>{
+        if(e.ruta===this.location.path()){
+          this.expandPanel=true
+          return {...e, select:true}
+        }else{
+          return e
+        }
+      })
+      this.menuText=menuText
 
       let menu=[
-        {ruta: '/Componentes/texto', text: 'Texto'},
+        //{ruta: '/Componentes/texto', text: 'Texto'},
         {ruta: '/Componentes/imagenes', text: 'Imágenes'},
         {ruta: '/Componentes/video', text: 'Videos'},
         {ruta: '/Componentes/seleccion-multiple', text: 'Selección múltiple'},

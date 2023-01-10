@@ -188,9 +188,62 @@ h1{
     transform: translateY(-0.1em);
   }
 }
+.mat-dialog-container {
+  padding: 0 !important;
+  animation: none;
+}
 
-.custom-dialog-container .mat-dialog-container {
+.custom-dialog-container{
   padding: 0;
+  animation-name: menuContain !important;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out ;
+}
+@keyframes menuContain {
+  0%{
+    transform: translate(-100%,0);
+  }
+  100%{
+    transform: translate(0,0);
+  }
+}
+.iconUNAD{
+  padding: 0;
+  animation-name: iconU !important;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out ;
+}
+@keyframes iconU {
+  0%{
+    transform: translate(-100%,0);
+  }
+  10%{
+    transform: translate(-100%,0);
+  }
+  100%{
+    transform: translate(0,0);
+  }
+}
+
+.menuResponsive{
+  padding: 0;
+  animation-name: menuRes ;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out ;
+}
+@keyframes menuRes {
+  0%{
+    transform: translate(-100%,0);
+  }
+  10%{
+    transform: translate(-100%,0);
+  }
+  100%{
+    transform: translate(0,0);
+  }
 }
 
 .mat-icon {
@@ -312,7 +365,7 @@ h1{
 
 .textHorAppear
 {
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-name: slideHorizontal;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
@@ -322,7 +375,7 @@ h1{
     opacity: 0;
     transform: translate(-50%,0);
   }
-  50% {
+  30% {
     opacity: 0;
     transform: translate(-50%,0);
   }

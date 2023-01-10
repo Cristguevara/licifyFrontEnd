@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MenuResponsiveComponent } from './shared/menu-responsive/menu-responsive.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatListModule,
     MatButtonModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

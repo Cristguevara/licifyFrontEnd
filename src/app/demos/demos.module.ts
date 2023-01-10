@@ -32,6 +32,9 @@ import { FormsModule } from '@angular/forms';
 import { SwiperModule } from "swiper/angular";
 import { ResultsComponent } from './pages/results/results.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { ConceptualMapComponent } from './pages/texts/conceptual-map/conceptual-map.component';
+import { AnimationBoxesComponent } from './pages/texts/animation-boxes/animation-boxes.component';
+import { IconsAndButtonsComponent } from './pages/texts/icons-and-buttons/icons-and-buttons.component';
 
 
 @NgModule({
@@ -50,7 +53,10 @@ import {MatDividerModule} from '@angular/material/divider';
     ImagesGaleryComponent,
     InputTextComponent,
     SlidePresentationComponent,
-    ResultsComponent
+    ResultsComponent,
+    ConceptualMapComponent,
+    AnimationBoxesComponent,
+    IconsAndButtonsComponent
   ],
   imports: [
     CommonModule,

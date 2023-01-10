@@ -14,6 +14,9 @@ import { SelectionListsComponent } from './pages/selection-lists/selection-lists
 import { SlidePresentationComponent } from './pages/slide-presentation/slide-presentation.component';
 import { SliderComponent } from './pages/slider/slider.component';
 import { ResultsComponent } from './pages/results/results.component';
+import { ConceptualMapComponent } from './pages/texts/conceptual-map/conceptual-map.component';
+import { AnimationBoxesComponent } from './pages/texts/animation-boxes/animation-boxes.component';
+import { IconsAndButtonsComponent } from './pages/texts/icons-and-buttons/icons-and-buttons.component';
 
 const routes: Routes = [
   {
@@ -30,7 +33,14 @@ const routes: Routes = [
       {path: 'seleccion-listas', component:  SelectionListsComponent },
       {path: 'presentacion-diapositivas', component:  SlidePresentationComponent },
       {path: 'control-deslizante', component:  SliderComponent },
-      {path: 'texto', component: TextsComponent },
+      {path: 'texto',
+      //component: TextsComponent,
+      children:[
+        {path: '', component: TextsComponent },
+        {path: 'mapa-conceptual', component: ConceptualMapComponent },
+        {path: 'caja-de-texto-animada', component: AnimationBoxesComponent },
+        {path: 'iconos-botones-para-desplegar-texto', component: IconsAndButtonsComponent },
+      ]},
       {path: 'video', component:  VideosComponent },
       {path: 'resultados', component:  ResultsComponent },
       {path: '**', redirectTo:  'texto' }

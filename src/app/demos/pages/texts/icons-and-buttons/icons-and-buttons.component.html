@@ -1,0 +1,122 @@
+<div class="flex flex-row items-center">
+  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12">description</mat-icon>
+  <h1 class="font-bold text-xl mb-4">Iconos y botones para desplegar información</h1>
+</div>
+<mat-divider></mat-divider>
+
+<div class="w-full grid grid-cols-3 gap-4 ">
+
+  <div>
+
+    <div class="flex flex-row justify-center w-full h-20 items-end">
+      <mat-icon class="flex text-[#F0B429] text-5xl w-12 h-12 iconMovVert">pan_tool_alt</mat-icon>
+    </div>
+
+    <div class="mt-1">
+
+      <button  class="bg-[#F0B429] text-black w-full text-base font-bold py-2 rounded" *ngIf="!div01" (click)="this.div01 = true" >
+        <p class="m-0">The following are some of the most common reasons.</p>
+      </button>
+
+      <div class="border-2 rounded border-[#F0B429] divBoxin overflow-hidden" *ngIf="div01">
+        <div class="flex flex-col textHorAppear">
+          <div class="flex flex-row justify-end px-2 py-1">
+            <mat-icon class="flex text-red-600 text-5xl w-12 h-12 cursor-pointer iconHov" (click)="this.div01 = false">cancel</mat-icon>
+          </div>
+          <ul class="pl-8 p-4 ">
+            <li class="list-disc">To understand and evaluate the topic area or knowledge field.</li>
+            <li class="list-disc">To discover what research has contributed to the development of the area or subject topic and how.</li>
+            <li class="list-disc">To develop a theoretical and methodological framework for the research study.</li>
+            <li class="list-disc">To give new interpretations of previous findings or combine new with old interpretations.</li>
+            <li class="list-disc">To demonstrate familiarity of the study with the topics and the scholarly contexts.</li>
+            <li class="list-disc">To identify gaps in current knowledge; to show limitations of theories and points of view; to review areas of controversy, etc. and to explain how the research study will address these problems or others.</li>
+            <li class="list-disc">To formulate areas for further research.</li>
+            <li class="list-disc">To position the study in relation to other researchers and theorists.</li>
+            <li class="list-disc">To resolve conflicts amongst seemingly contradictory previous studies.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div>
+
+    <div class="flex flex-row justify-center w-full h-20 items-end">
+      <mat-icon class="flex text-[#F47920] text-5xl w-12 h-12 iconMovVert">touch_app</mat-icon>
+    </div>
+
+    <div class="mt-1">
+
+      <button  class="bg-[#F47920] text-black w-full text-base font-bold py-2 rounded" *ngIf="!div02" (click)="this.div02 = true">
+        <p class="m-0">The following are some of the most common reasons.</p>
+      </button>
+
+      <div class="border-2 rounded border-[#F47920] divBoxin overflow-hidden" *ngIf="div02">
+        <div class="flex flex-col textHorAppear">
+          <div class="flex flex-row justify-end px-2 py-1">
+            <mat-icon class="flex text-red-600 text-5xl w-12 h-12 cursor-pointer iconHov material-icons-outlined" (click)="this.div02 = false">cancel</mat-icon>
+          </div>
+          <ul class="pl-8 p-4 ">
+            <li class="list-disc">To understand and evaluate the topic area or knowledge field.</li>
+            <li class="list-disc">To discover what research has contributed to the development of the area or subject topic and how.</li>
+            <li class="list-disc">To develop a theoretical and methodological framework for the research study.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div>
+
+    <div class="flex flex-row justify-center w-full h-20 items-end">
+      <mat-icon class="flex text-[#005883] text-5xl w-12 h-12 iconMovVert material-icons-outlined">pan_tool_alt</mat-icon>
+    </div>
+
+    <div class="mt-1">
+
+      <button  class="bg-[#005883] text-white w-full text-base font-bold py-2 rounded" *ngIf="!div03" (click)="this.div03 = true">
+        <p class="m-0">The following are some of the most common reasons.</p>
+      </button>
+
+      <div class="border-2 rounded border-[#005883] divBoxin overflow-hidden" *ngIf="div03">
+        <div class="flex flex-col textHorAppear">
+          <div class="flex flex-row justify-end px-2 py-1">
+            <mat-icon class="flex text-red-600 text-5xl w-12 h-12 cursor-pointer iconHov" (click)="this.div03 = false">close</mat-icon>
+          </div>
+          <ul class="pl-8 p-4 ">
+            <li class="list-disc">To understand and evaluate the topic area or knowledge field.</li>
+            <li class="list-disc">To discover what research has contributed to the development of the area or subject topic and how.</li>
+            <li class="list-disc">To develop a theoretical and methodological framework for the research study.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="flex flex-row justify-between mt-2">
+  <button class="btnBack" [routerLink]="['/Componentes/texto/caja-de-texto-animada']">
+    <span>Anterior</span>
+    <div class="svg-wrapper-1">
+      <div class="svg-wrapper">
+        <mat-icon class="icon-size-6 text-black-500">arrow_back</mat-icon>
+      </div>
+    </div>
+  </button>
+
+  <button class="btnNext" [routerLink]="['/Componentes/imagenes']" >
+    <div class="svg-wrapper-1">
+      <div class="svg-wrapper">
+        <mat-icon class="icon-size-6 text-black-500">arrow_forward</mat-icon>
+      </div>
+    </div>
+    <span>Siguiente</span>
+  </button>
+</div>
+
