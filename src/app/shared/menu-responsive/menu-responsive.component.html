@@ -4,16 +4,41 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Logo_unad.png" class="max-w-[150px] h-auto iconUNAD">
     </div>
     <div class="w-full flex flex-row justify-center menuResponsive">
-      <p class="text-2xl font-bold mt-2 mb-0">Menú</p>
+      <p class="text-2xl font-bold mt-2 mb-0 text-[#005883]">Menú</p>
     </div>
     <div class="overflow-y-auto menuResponsive">
-      <mat-selection-list #shoes [multiple]="false" class="w-52" >
+      <mat-selection-list #shoes [multiple]="false" class="w-52 mb-12" >
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="expandPanel" class="boxExpandPanel">
+            <mat-expansion-panel-header [ngClass]="{'matExpansion' : expandPanel}">
+              <mat-panel-title [ngClass]="{'text-white' : expandPanel}">
+                Textos
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider>
+            <mat-list-option  *ngFor="let item of menuText" [value]="item.text" color="primary" [selected]="item.select"
+              [routerLink]="[item.ruta]" (click)="dialogRef.close()">
+              <div class="flex flex-row items-center">
+                <li class="textList list-disc"></li>
+                <p class="textList my-2">{{item.text}}</p>
+              </div>
+              <mat-divider></mat-divider>
+            </mat-list-option>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-divider></mat-divider>
         <mat-list-option  *ngFor="let item of menu" [value]="item.text" color="primary" [selected]="item.select"
         [routerLink]="[item.ruta]" (click)="dialogRef.close()">
         {{item.text}}
         <mat-divider></mat-divider>
         </mat-list-option>
       </mat-selection-list>
+    </div>
+    <div class="absolute bottom-0 w-full flex flex-col justify-end">
+      <div class="w-full bg-white flex flex-row justify-end items-center h-10 px-4 py-1">
+        <mat-icon class="flex text-red-600 text-5xl w-12 h-12 cursor-pointer" (click)="dialogRef.close()">disabled_by_default</mat-icon>
+        <button (click)="dialogRef.close()" class="text-xl font-bold text-[#005883]">Cerrar menú</button>
+      </div>
     </div>
   </div>
 </div>

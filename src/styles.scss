@@ -384,7 +384,66 @@ h1{
     transform: translate(0,0);
   }
 }
+.textVertAppear{
+  animation-duration: 0.6s;
+  animation-name: slideVertical;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+@keyframes slideVertical {
+  0% {
+    opacity: 0;
+    transform: translate(0,-50%);
+  }
+  10% {
+    opacity: 0;
+    transform: translate(0,-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0,0);
+  }
+}
 
 .iconHov:hover{
   transform: scale(1.1);
+}
+
+.iconBtn{
+  animation-duration: 2s;
+  animation-name: iconButton;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes iconButton {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(0.8);
+  }
+}
+
+.iconBtn:hover{
+  animation-duration: 1s;
+  animation-name: iconButtonHover;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: initial;
+}
+@keyframes iconButtonHover {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

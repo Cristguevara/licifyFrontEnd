@@ -35,6 +35,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { ConceptualMapComponent } from './pages/texts/conceptual-map/conceptual-map.component';
 import { AnimationBoxesComponent } from './pages/texts/animation-boxes/animation-boxes.component';
 import { IconsAndButtonsComponent } from './pages/texts/icons-and-buttons/icons-and-buttons.component';
+import { InformationBoxesComponent } from './pages/texts/information-boxes/information-boxes.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { IconsAndButtonsComponent } from './pages/texts/icons-and-buttons/icons-
     ResultsComponent,
     ConceptualMapComponent,
     AnimationBoxesComponent,
-    IconsAndButtonsComponent
+    IconsAndButtonsComponent,
+    InformationBoxesComponent
   ],
   imports: [
     CommonModule,

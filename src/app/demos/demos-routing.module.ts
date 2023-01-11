@@ -17,6 +17,7 @@ import { ResultsComponent } from './pages/results/results.component';
 import { ConceptualMapComponent } from './pages/texts/conceptual-map/conceptual-map.component';
 import { AnimationBoxesComponent } from './pages/texts/animation-boxes/animation-boxes.component';
 import { IconsAndButtonsComponent } from './pages/texts/icons-and-buttons/icons-and-buttons.component';
+import { InformationBoxesComponent } from './pages/texts/information-boxes/information-boxes.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,7 @@ const routes: Routes = [
         {path: 'mapa-conceptual', component: ConceptualMapComponent },
         {path: 'caja-de-texto-animada', component: AnimationBoxesComponent },
         {path: 'iconos-botones-para-desplegar-texto', component: IconsAndButtonsComponent },
+        {path: 'cajas-de-informacion', component: InformationBoxesComponent },
       ]},
       {path: 'video', component:  VideosComponent },
       {path: 'resultados', component:  ResultsComponent },

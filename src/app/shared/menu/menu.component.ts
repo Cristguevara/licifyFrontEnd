@@ -30,7 +30,8 @@ export class MenuComponent  implements OnInit{
         {ruta: '/Componentes/texto', text: 'Texto normal' },
         {ruta: '/Componentes/texto/mapa-conceptual', text: 'Mapa conceptual texto' },
         {ruta: '/Componentes/texto/caja-de-texto-animada', text: 'Cajas de texto animadas y audio' },
-        {ruta: '/Componentes/texto/iconos-botones-para-desplegar-texto', text: 'Iconos y botones para desplegar texto' }
+        {ruta: '/Componentes/texto/iconos-botones-para-desplegar-texto', text: 'Iconos y botones para desplegar texto' },
+        {ruta: '/Componentes/texto/cajas-de-informacion', text: 'Botones para desplegar información' }
       ]
       menuText=menuText.map((e:any)=>{
         if(e.ruta===this.location.path()){
