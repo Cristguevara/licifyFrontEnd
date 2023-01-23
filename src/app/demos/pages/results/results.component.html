@@ -1,5 +1,9 @@
-<h1 class="font-bold text-xl mb-4">Resultados de una evaluación</h1>
-<form [formGroup]="form" class="flex flex-col">
+<div class="flex flex-row items-center">
+  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12">description</mat-icon>
+  <h1 class="font-bold text-xl mb-4">Resultados de una evaluación</h1>
+</div>
+<mat-divider></mat-divider>
+<form [formGroup]="form" class="flex flex-col mt-2">
 
   <p>1. Escoja la imágen que tiene un "Pug". (5 pts)</p>
   <mat-radio-group class="grid grid-cols-3 gap-4 w-full" formControlName="first" [disabled]="disabled">
