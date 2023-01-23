@@ -31,7 +31,9 @@ export class MenuComponent  implements OnInit{
         {ruta: '/Componentes/texto/mapa-conceptual', text: 'Mapa conceptual texto' },
         {ruta: '/Componentes/texto/caja-de-texto-animada', text: 'Cajas de texto animadas y audio' },
         {ruta: '/Componentes/texto/iconos-botones-para-desplegar-texto', text: 'Iconos y botones para desplegar texto' },
-        {ruta: '/Componentes/texto/cajas-de-informacion', text: 'Botones para desplegar información' }
+        {ruta: '/Componentes/texto/cajas-de-informacion', text: 'Botones para desplegar información' },
+        {ruta: '/Componentes/texto/mapa-conceptual-con-botones', text: 'Mapa conceptual con botones' },
+        {ruta: '/Componentes/texto/textos-con-imagenes', text: 'Textos con imágenes' }
       ]
       menuText=menuText.map((e:any)=>{
         if(e.ruta===this.location.path()){
@@ -48,6 +50,8 @@ export class MenuComponent  implements OnInit{
         {ruta: '/Componentes/imagenes', text: 'Imágenes'},
         {ruta: '/Componentes/video', text: 'Videos'},
         {ruta: '/Componentes/seleccion-multiple', text: 'Selección múltiple'},
+        {ruta: '/Componentes/varias-seleccion-multiple', text: 'Conjunto de selección múltiple'},
+        {ruta: '/Componentes/verificacion-opciones', text: 'Selección de conjunto'},
         {ruta: '/Componentes/acordeon', text: 'Acordeón'},
         {ruta: '/Componentes/iframe', text: 'Iframe'},
         {ruta: '/Componentes/galeria-imagenes', text: 'Galería de imágenes'},

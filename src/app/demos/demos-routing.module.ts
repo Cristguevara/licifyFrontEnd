@@ -18,6 +18,10 @@ import { ConceptualMapComponent } from './pages/texts/conceptual-map/conceptual-
 import { AnimationBoxesComponent } from './pages/texts/animation-boxes/animation-boxes.component';
 import { IconsAndButtonsComponent } from './pages/texts/icons-and-buttons/icons-and-buttons.component';
 import { InformationBoxesComponent } from './pages/texts/information-boxes/information-boxes.component';
+import { ConceptualMapWithButtonsComponent } from './pages/texts/conceptual-map-with-buttons/conceptual-map-with-buttons.component';
+import { CheckOptionsComponent } from './pages/check-options/check-options.component';
+import { TextsWithImagesComponent } from './pages/texts/texts-with-images/texts-with-images.component';
+import { MultipleChoiseSomeComponent } from './pages/multiple-choise-some/multiple-choise-some.component';
 
 const routes: Routes = [
   {
@@ -30,6 +34,8 @@ const routes: Routes = [
       {path: 'entrada-texto', component: InputTextComponent },
       //{path: 'intro', component: IntroComponent },
       {path: 'seleccion-multiple', component:  MultipleChoiseComponent },
+      {path: 'varias-seleccion-multiple', component:  MultipleChoiseSomeComponent },
+      {path: 'verificacion-opciones', component:  CheckOptionsComponent },
       {path: 'seleccion-multiple-imagenes', component:  MultipleChoiseImagesComponent },
       {path: 'seleccion-listas', component:  SelectionListsComponent },
       {path: 'presentacion-diapositivas', component:  SlidePresentationComponent },
@@ -42,6 +48,8 @@ const routes: Routes = [
         {path: 'caja-de-texto-animada', component: AnimationBoxesComponent },
         {path: 'iconos-botones-para-desplegar-texto', component: IconsAndButtonsComponent },
         {path: 'cajas-de-informacion', component: InformationBoxesComponent },
+        {path: 'mapa-conceptual-con-botones', component: ConceptualMapWithButtonsComponent },
+        {path: 'textos-con-imagenes', component: TextsWithImagesComponent },
       ]},
       {path: 'video', component:  VideosComponent },
       {path: 'resultados', component:  ResultsComponent },

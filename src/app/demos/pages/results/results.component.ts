@@ -64,7 +64,7 @@ export class ResultsComponent implements OnInit {
       textFeedback='El color amarillo en inglés es YELLOW.'
     }
     this.dialog.open(FeedbackComponent, {
-      data: textFeedback,
+      data: {text:textFeedback},
       panelClass: 'custom-dialog-container'
     });
   }

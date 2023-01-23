@@ -1,0 +1,26 @@
+.backRadial{
+  background-image: radial-gradient(white 0%,white 35% ,transparent 40%);
+  animation-duration: 0.5s;
+  animation-name: iconCancel;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+@keyframes iconCancel {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.backRadialGood{
+  background-image: radial-gradient(white 0%,white 35% ,transparent 40%);
+}
+
+.divCorrectAnswer{
+  animation-duration: 0.5s;
+  animation-name: iconCancel;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}

@@ -1,5 +1,9 @@
 <div class="w-full">
-  <h1 class="font-bold text-xl mb-4">Control deslizante</h1>
+  <div class="flex flex-row items-center">
+    <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12">image</mat-icon>
+    <h1 class="font-bold text-xl mb-4">Control deslizante</h1>
+  </div>
+  <mat-divider></mat-divider>
   <p>¿Cuánto es 10/2?</p>
   <mat-slider
   thumbLabel
@@ -15,9 +19,13 @@
     <button mat-raised-button (click)="askQuestion()" disabled="{{form.invalid}}" class="bg-[#005883] text-white">Enviar</button>
   </div>
 
-  <div class="my-4 flex flex-row" *ngIf="disabled">
-    <p class="my-2" *ngIf="check">Acertaste</p>
-    <p class="my-2" *ngIf="!check">No acertaste</p>
+  <div class="my-4 flex flex-col" *ngIf="disabled">
+    <div class="flex flex-row items-center">
+      <mat-icon *ngIf="check" class="flex text-green-600 material-icons-outlined text-5xl w-12 h-12 mr-2">check_circle</mat-icon>
+      <p class="my-2" *ngIf="check">Acertaste</p>
+      <mat-icon *ngIf="!check" class="flex text-red-600 material-icons-outlined text-5xl w-12 h-12 mr-2">cancel</mat-icon>
+      <p class="my-2" *ngIf="!check">No acertaste</p>
+    </div>
     <div class="ml-2">
       <button mat-raised-button (click)="openFeedback()" *ngIf="!check" class="bg-[#005883] text-white">Ver Retroalimentación</button>
     </div>

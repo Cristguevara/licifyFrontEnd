@@ -44,7 +44,7 @@ export class MultipleChoiseComponent implements OnInit {
 
   openFeedback(): void{
     this.dialog.open(FeedbackComponent, {
-      data: this.textFeedback,
+      data: {title:'', text:this.textFeedback},
       panelClass: 'custom-dialog-container'
     });
   }

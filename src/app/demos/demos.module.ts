@@ -36,6 +36,11 @@ import { ConceptualMapComponent } from './pages/texts/conceptual-map/conceptual-
 import { AnimationBoxesComponent } from './pages/texts/animation-boxes/animation-boxes.component';
 import { IconsAndButtonsComponent } from './pages/texts/icons-and-buttons/icons-and-buttons.component';
 import { InformationBoxesComponent } from './pages/texts/information-boxes/information-boxes.component';
+import { ConceptualMapWithButtonsComponent } from './pages/texts/conceptual-map-with-buttons/conceptual-map-with-buttons.component';
+import { CheckOptionsComponent } from './pages/check-options/check-options.component';
+import { TextsWithImagesComponent } from './pages/texts/texts-with-images/texts-with-images.component';
+import { MultipleChoiseSomeComponent } from './pages/multiple-choise-some/multiple-choise-some.component';
+import { SelectionListSomeComponent } from './pages/selection-list-some/selection-list-some.component';
 
 
 @NgModule({
@@ -58,7 +63,12 @@ import { InformationBoxesComponent } from './pages/texts/information-boxes/infor
     ConceptualMapComponent,
     AnimationBoxesComponent,
     IconsAndButtonsComponent,
-    InformationBoxesComponent
+    InformationBoxesComponent,
+    ConceptualMapWithButtonsComponent,
+    CheckOptionsComponent,
+    TextsWithImagesComponent,
+    MultipleChoiseSomeComponent,
+    SelectionListSomeComponent
   ],
   imports: [
     CommonModule,

@@ -15,7 +15,7 @@ export class AppComponent {
   openMenu(): void{
 
     this.dialog.open(MenuResponsiveComponent, {
-      panelClass: 'custom-dialog-container',
+      panelClass: 'menuRespondiveDialog',
       position: {top:'0',left:'0'},
     });
 

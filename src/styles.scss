@@ -190,10 +190,14 @@ h1{
 }
 .mat-dialog-container {
   padding: 0 !important;
-  animation: none;
+  //animation: none;
 }
 
 .custom-dialog-container{
+  padding: 0;
+}
+
+.menuRespondiveDialog{
   padding: 0;
   animation-name: menuContain !important;
   animation-duration: 0.4s;
@@ -208,6 +212,7 @@ h1{
     transform: translate(0,0);
   }
 }
+
 .iconUNAD{
   padding: 0;
   animation-name: iconU !important;
@@ -359,7 +364,23 @@ h1{
     max-height: 0px;
   }
   100% {
-    max-height: 800px;
+    max-height: 900px;
+  }
+}
+
+.divBoxOut
+{
+  animation-duration: 0.5s;
+  animation-name: slideUp;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+@keyframes slideUp {
+  0% {
+    max-height: 900px;
+  }
+  100% {
+    max-height: 0px;
   }
 }
 

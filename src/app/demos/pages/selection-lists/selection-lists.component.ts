@@ -37,7 +37,7 @@ export class SelectionListsComponent implements OnInit {
 
   openFeedback(): void{
     this.dialog.open(FeedbackComponent, {
-      data: this.textFeedback,
+      data: {text:this.textFeedback},
       panelClass: 'custom-dialog-container'
     });
   }

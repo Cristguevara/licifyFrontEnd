@@ -42,7 +42,7 @@ export class MultipleChoiseImagesComponent implements OnInit {
 
   openFeedback(): void{
     this.dialog.open(FeedbackComponent, {
-      data: this.textFeedback,
+      data: {text:this.textFeedback},
       panelClass: 'custom-dialog-container'
     });
   }

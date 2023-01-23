@@ -1,34 +1,58 @@
-<h1 class="font-bold text-xl mb-4">Acordeón</h1>
-<mat-accordion class="flex flex-col w-80">
-  <mat-expansion-panel >
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Item 1
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>Este es el item 1.</p>
-  </mat-expansion-panel>
+<div class="flex flex-row items-center">
+  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12">description</mat-icon>
+  <h1 class="font-bold text-xl mb-4">Acordeón</h1>
+</div>
+<mat-divider></mat-divider>
 
-  <mat-expansion-panel >
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Item 2
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>Este es el item 2.</p>
-  </mat-expansion-panel>
+<div class="my-2 w-full flex flex-col items-center">
+  <mat-accordion class="flex flex-col w-full max-w-7xl">
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Texto
+        </mat-panel-title>
+        <mat-panel-description>
+          Panel con texto
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="w-full py-2 px-4">
+        <p class="text-justify text-base">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+    </mat-expansion-panel>
 
-  <mat-expansion-panel >
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Item 3
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>Este es el item 3.</p>
-  </mat-expansion-panel>
-</mat-accordion>
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Imagen
+        </mat-panel-title>
+        <mat-panel-description>
+          Panel con imagen
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="w-full py-2 px-4 flex flex-col items-center">
+        <img src="https://images.hola.com/imagenes/mascotas/20221020219416/razas-perros-toy/1-154-385/razas-de-perro-toy-t.jpg" class="max-w-2xl w-full flex">
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Texto e imagen
+        </mat-panel-title>
+        <mat-panel-description>
+          Panel con texto e imagen
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="w-full py-2 px-4 gap-4 flex flex-col items-center grid md:grid-cols-3">
+        <img src="https://images.hola.com/imagenes/mascotas/20221020219416/razas-perros-toy/1-154-385/razas-de-perro-toy-t.jpg" class="max-w-2xl  w-full md:col-span-1">
+        <p class="text-justify text-base md:col-span-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
 <div class="flex flex-row justify-between">
-  <button class="btnBack" [routerLink]="['/Componentes/seleccion-multiple']">
+  <button class="btnBack" [routerLink]="['/Componentes/verificacion-opciones']">
     <span>Anterior</span>
     <div class="svg-wrapper-1">
       <div class="svg-wrapper">
