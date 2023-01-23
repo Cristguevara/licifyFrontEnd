@@ -14,11 +14,15 @@
       <button mat-raised-button (click)="askQuestion()" disabled="{{form.invalid}}" class="bg-[#005883] text-white">Enviar</button>
     </div>
 
-    <div class="my-4 flex flex-row" *ngIf="feedbackContainer">
-      <p class="my-2" *ngIf="check">Acertaste</p>
-      <p class="my-2" *ngIf="!check">No acertaste</p>
-      <div class="ml-2">
-        <button mat-raised-button (click)="openFeedback()" *ngIf="!check" class="bg-[#005883] text-white">Ver Retroalimentación</button>
+    <div class="my-4 flex flex-col" *ngIf="feedbackContainer">
+      <div class="flex flex-row items-center">
+        <mat-icon *ngIf="check" class="flex text-green-600 material-icons-outlined text-5xl w-12 h-12 mr-2">check_circle</mat-icon>
+        <p class="my-2" *ngIf="check">Acertaste</p>
+        <mat-icon *ngIf="!check" class="flex text-red-600 material-icons-outlined text-5xl w-12 h-12 mr-2">cancel</mat-icon>
+        <p class="my-2" *ngIf="!check">No acertaste</p>
+      </div>
+      <div class="my-2">
+        <button mat-raised-button (click)="openFeedback()" class="bg-[#005883] text-white" *ngIf="!check">Ver Retroalimentación</button>
       </div>
 
     </div>

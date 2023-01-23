@@ -4,7 +4,7 @@
     <h1 class="font-bold text-xl mb-4">Selección múltiple con imágenes</h1>
   </div>
   <mat-divider></mat-divider>
-  
+
   <p class="mt-2">Escoja la imágen que tiene un "Pug".</p>
   <form autocomplete="off" [formGroup]="form" >
     <mat-radio-group class="grid grid-cols-3 gap-4 w-full" formControlName="first" [disabled]="feedbackContainer">
@@ -29,10 +29,14 @@
     <button mat-raised-button (click)="askQuestion()" disabled="{{form.invalid}}" class="bg-[#005883] text-white">Enviar</button>
   </div>
 
-  <div class="my-4 flex flex-row" *ngIf="feedbackContainer">
-    <p class="my-2" *ngIf="check">Acertaste</p>
-    <p class="my-2" *ngIf="!check">No acertaste</p>
-    <div class="ml-2">
+  <div class="my-4 flex flex-col" *ngIf="feedbackContainer">
+    <div class="flex flex-row items-center">
+      <mat-icon *ngIf="check" class="flex text-green-600 material-icons-outlined text-5xl w-12 h-12 mr-2">check_circle</mat-icon>
+      <p class="my-2" *ngIf="check">Acertaste</p>
+      <mat-icon *ngIf="!check" class="flex text-red-600 material-icons-outlined text-5xl w-12 h-12 mr-2">cancel</mat-icon>
+      <p class="my-2" *ngIf="!check">No acertaste</p>
+    </div>
+    <div class="my-2">
       <button mat-raised-button (click)="openFeedback()" *ngIf="!check" class="bg-[#005883] text-white">Ver Retroalimentación</button>
     </div>
   </div>

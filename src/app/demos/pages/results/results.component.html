@@ -23,10 +23,14 @@
       <mat-radio-button  value="3">3</mat-radio-button>
     </div>
   </mat-radio-group>
-  <div class="my-4 flex flex-row" *ngIf="disabled">
-    <p class="my-2" *ngIf="checkFirst">Acertaste</p>
-    <p class="my-2" *ngIf="!checkFirst">No acertaste</p>
-    <div class="ml-2">
+  <div class="my-4 flex flex-col" *ngIf="disabled">
+    <div class="flex flex-row items-center">
+      <mat-icon *ngIf="checkFirst" class="flex text-green-600 material-icons-outlined text-5xl w-12 h-12 mr-2">check_circle</mat-icon>
+      <p class="my-2" *ngIf="checkFirst">Acertaste</p>
+      <mat-icon *ngIf="!checkFirst" class="flex text-red-600 material-icons-outlined text-5xl w-12 h-12 mr-2">cancel</mat-icon>
+      <p class="my-2" *ngIf="!checkFirst">No acertaste</p>
+    </div>
+    <div class="my-2">
       <button mat-raised-button (click)="openFeedback(1)" *ngIf="!checkFirst" class="bg-[#005883] text-white">Ver Retroalimentación</button>
     </div>
   </div>
@@ -40,10 +44,14 @@
       <mat-option value="option3">Blue</mat-option>
     </mat-select>
   </mat-form-field>
-  <div class="my-4 flex flex-row" *ngIf="disabled">
-    <p class="my-2" *ngIf="checkSecond">Acertaste</p>
-    <p class="my-2" *ngIf="!checkSecond">No acertaste</p>
-    <div class="ml-2">
+  <div class="my-4 flex flex-col" *ngIf="disabled">
+    <div class="flex flex-row items-center">
+      <mat-icon *ngIf="checkSecond" class="flex text-green-600 material-icons-outlined text-5xl w-12 h-12 mr-2">check_circle</mat-icon>
+      <p class="my-2" *ngIf="checkSecond">Acertaste</p>
+      <mat-icon *ngIf="!checkSecond" class="flex text-red-600 material-icons-outlined text-5xl w-12 h-12 mr-2">cancel</mat-icon>
+      <p class="my-2" *ngIf="!checkSecond">No acertaste</p>
+    </div>
+    <div class="my-2">
       <button mat-raised-button (click)="openFeedback(2)" *ngIf="!checkSecond" class="bg-[#005883] text-white">Ver Retroalimentación</button>
     </div>
   </div>
@@ -52,16 +60,20 @@
   <mat-form-field class="w-52" appearance="fill" >
     <input matInput type="text"  formControlName="third" >
   </mat-form-field>
-  <div class="my-4 flex flex-row" *ngIf="disabled">
-    <p class="my-2" *ngIf="checkThird">Acertaste</p>
-    <p class="my-2" *ngIf="!checkThird">No acertaste</p>
-    <div class="ml-2">
+  <div class="my-4 flex flex-col" *ngIf="disabled">
+    <div class="flex flex-row items-center">
+      <mat-icon *ngIf="checkThird" class="flex text-green-600 material-icons-outlined text-5xl w-12 h-12 mr-2">check_circle</mat-icon>
+      <p class="my-2" *ngIf="checkThird">Acertaste</p>
+      <mat-icon *ngIf="!checkThird" class="flex text-red-600 material-icons-outlined text-5xl w-12 h-12 mr-2">cancel</mat-icon>
+      <p class="my-2" *ngIf="!checkThird">No acertaste</p>
+    </div>
+    <div class="my-2">
       <button mat-raised-button (click)="openFeedback(3)" *ngIf="!checkThird" class="bg-[#005883] text-white">Ver Retroalimentación</button>
     </div>
   </div>
 
-  <div class="my-4" *ngIf="!disabled">
-    <button mat-raised-button  (click)="answerQuestions()" disabled="{{form.invalid}}" class="bg-[#005883] text-white">Enviar</button>
+  <div class="my-4 w-full items-center flex flex-col" *ngIf="!disabled">
+    <button mat-raised-button  (click)="answerQuestions()" disabled="{{form.invalid}}" class="bg-[#005883] text-white">Revisar Respuestas</button>
   </div>
 
   <div class="my-4 flex flex-row" *ngIf="disabled">
