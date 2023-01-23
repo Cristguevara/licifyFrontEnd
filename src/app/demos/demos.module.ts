@@ -41,6 +41,7 @@ import { CheckOptionsComponent } from './pages/check-options/check-options.compo
 import { TextsWithImagesComponent } from './pages/texts/texts-with-images/texts-with-images.component';
 import { MultipleChoiseSomeComponent } from './pages/multiple-choise-some/multiple-choise-some.component';
 import { SelectionListSomeComponent } from './pages/selection-list-some/selection-list-some.component';
+import { SelectionListWithTextComponent } from './pages/selection-list-with-text/selection-list-with-text.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { SelectionListSomeComponent } from './pages/selection-list-some/selectio
     CheckOptionsComponent,
     TextsWithImagesComponent,
     MultipleChoiseSomeComponent,
-    SelectionListSomeComponent
+    SelectionListSomeComponent,
+    SelectionListWithTextComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,25 @@
+<div class="flex flex-row items-center">
+  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12">description</mat-icon>
+  <h1 class="font-bold text-xl mb-4">Parrafo con selección de listas</h1>
+</div>
+<mat-divider></mat-divider>
+
+<div class="flex flex-row justify-between mt-2">
+  <button class="btnBack" [routerLink]="['/Componentes/varias-seleccion-listas']">
+    <span>Anterior</span>
+    <div class="svg-wrapper-1">
+      <div class="svg-wrapper">
+        <mat-icon class="icon-size-6 text-black-500">arrow_back</mat-icon>
+      </div>
+    </div>
+  </button>
+
+  <button class="btnNext" [routerLink]="['/Componentes/seleccion-multiple-imagenes']" >
+    <div class="svg-wrapper-1">
+      <div class="svg-wrapper">
+        <mat-icon class="icon-size-6 text-black-500">arrow_forward</mat-icon>
+      </div>
+    </div>
+    <span>Siguiente</span>
+  </button>
+</div>

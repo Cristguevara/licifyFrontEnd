@@ -52,6 +52,7 @@ export class MenuResponsiveComponent implements OnInit {
           {ruta: '/Componentes/imagenes', text: 'Imágenes'},
           {ruta: '/Componentes/video', text: 'Videos'},
           {ruta: '/Componentes/seleccion-multiple', text: 'Selección múltiple'},
+          {ruta: '/Componentes/varias-seleccion-multiple', text: 'Conjunto de selección múltiple'},
           {ruta: '/Componentes/verificacion-opciones', text: 'Selección de conjunto'},
           {ruta: '/Componentes/acordeon', text: 'Acordeón'},
           {ruta: '/Componentes/iframe', text: 'Iframe'},
@@ -59,10 +60,12 @@ export class MenuResponsiveComponent implements OnInit {
           {ruta: '/Componentes/control-deslizante', text: 'Control deslizante'},
           {ruta: '/Componentes/presentacion-diapositivas', text: 'Presentación de diapositivas'},
           {ruta: '/Componentes/seleccion-listas', text: 'Selección de listas'},
+          {ruta: '/Componentes/varias-seleccion-listas', text: 'Conjunto de selección de listas'},
+          {ruta: '/Componentes/parrafo-con-seleccion-listas', text: 'Parrafo con selección de listas'},
           {ruta: '/Componentes/seleccion-multiple-imagenes', text: 'Selección múltiple con imágenes'},
           {ruta: '/Componentes/entrada-texto', text: 'Entrada de texto'},
           {ruta: '/Componentes/resultados', text: 'Resultados de evaluación'},
-        ]
+          ]
 
         menu=menu.map((e:any)=>{
           if(e.ruta===this.location.path()){

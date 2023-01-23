@@ -22,6 +22,8 @@ import { ConceptualMapWithButtonsComponent } from './pages/texts/conceptual-map-
 import { CheckOptionsComponent } from './pages/check-options/check-options.component';
 import { TextsWithImagesComponent } from './pages/texts/texts-with-images/texts-with-images.component';
 import { MultipleChoiseSomeComponent } from './pages/multiple-choise-some/multiple-choise-some.component';
+import { SelectionListSomeComponent } from './pages/selection-list-some/selection-list-some.component';
+import { SelectionListWithTextComponent } from './pages/selection-list-with-text/selection-list-with-text.component';
 
 const routes: Routes = [
   {
@@ -38,6 +40,8 @@ const routes: Routes = [
       {path: 'verificacion-opciones', component:  CheckOptionsComponent },
       {path: 'seleccion-multiple-imagenes', component:  MultipleChoiseImagesComponent },
       {path: 'seleccion-listas', component:  SelectionListsComponent },
+      {path: 'varias-seleccion-listas', component:  SelectionListSomeComponent },
+      {path: 'parrafo-con-seleccion-listas', component:  SelectionListWithTextComponent },
       {path: 'presentacion-diapositivas', component:  SlidePresentationComponent },
       {path: 'control-deslizante', component:  SliderComponent },
       {path: 'texto',
