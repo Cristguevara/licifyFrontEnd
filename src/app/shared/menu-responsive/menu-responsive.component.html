@@ -32,6 +32,25 @@
         {{item.text}}
         <mat-divider></mat-divider>
         </mat-list-option>
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="expandChartPanel" class="boxExpandPanel">
+            <mat-expansion-panel-header [ngClass]="{'matExpansion' : expandChartPanel}">
+              <mat-panel-title [ngClass]="{'text-white' : expandChartPanel}">
+                Gráficas
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider>
+            <mat-list-option  *ngFor="let item of menuCharts" [value]="item.text" color="primary" [selected]="item.select"
+              [routerLink]="[item.ruta]" >
+              <div class="flex flex-row items-center">
+                <li class="textList list-disc"></li>
+                <p class="textList my-2">{{item.text}}</p>
+              </div>
+              <mat-divider></mat-divider>
+            </mat-list-option>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-divider></mat-divider>
       </mat-selection-list>
     </div>
     <div class="absolute bottom-0 w-full flex flex-col justify-end">

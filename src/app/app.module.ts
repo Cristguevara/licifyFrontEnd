@@ -16,6 +16,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { MenuResponsiveComponent } from './shared/menu-responsive/menu-responsive.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { NgApexchartsModule } from "ng-apexcharts";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatButtonModule,
     MatNativeDateModule,
     MatDialogModule,
-    MatExpansionModule
+    MatExpansionModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

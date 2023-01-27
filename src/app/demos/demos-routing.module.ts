@@ -24,6 +24,12 @@ import { TextsWithImagesComponent } from './pages/texts/texts-with-images/texts-
 import { MultipleChoiseSomeComponent } from './pages/multiple-choise-some/multiple-choise-some.component';
 import { SelectionListSomeComponent } from './pages/selection-list-some/selection-list-some.component';
 import { SelectionListWithTextComponent } from './pages/selection-list-with-text/selection-list-with-text.component';
+import { LineComponent } from './pages/charts/line/line.component';
+import { AreaComponent } from './pages/charts/area/area.component';
+import { ColumnComponent } from './pages/charts/column/column.component';
+import { BarComponent } from './pages/charts/bar/bar.component';
+import { DonutComponent } from './pages/charts/donut/donut.component';
+import { PieComponent } from './pages/charts/pie/pie.component';
 
 const routes: Routes = [
   {
@@ -57,6 +63,15 @@ const routes: Routes = [
       ]},
       {path: 'video', component:  VideosComponent },
       {path: 'resultados', component:  ResultsComponent },
+      {path: 'graficas',
+      children:[
+        {path: 'lineal', component: LineComponent },
+        {path: 'area', component: AreaComponent },
+        {path: 'columnas', component: ColumnComponent },
+        {path: 'barras', component: BarComponent },
+        {path: 'dona', component: DonutComponent },
+        {path: 'pie', component: PieComponent },
+      ]},
       {path: '**', redirectTo:  'texto' }
     ]
   }

@@ -1,38 +1,51 @@
-<mat-selection-list #shoes [multiple]="false" class="w-44 sm:w-48 md:w-52 lg:w-64" >
-  <mat-accordion>
-    <mat-expansion-panel [expanded]="expandPanel" class="boxExpandPanel">
-      <mat-expansion-panel-header [ngClass]="{'matExpansion' : expandPanel}">
-        <mat-panel-title [ngClass]="{'text-white' : expandPanel}">
-          Textos
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <!-- <div class="w-full p-2 pl-6 cursor-pointer">
-        <p class="m-0">Texto normal</p>
-      </div>
-      <div class="w-full p-2 pl-6 cursor-pointer">
-        <p class="m-0">Mapa conceptual texto</p>
-      </div>
-      <div class="w-full p-2 pl-6 cursor-pointer">
-        <p class="m-0">Cajas de texto animadas y audio</p>
-      </div>
-      <div class="w-full p-2 pl-6 cursor-pointer">
-        <p class="m-0">Iconos y botones para desplegar texto</p>
-      </div> -->
-      <mat-divider></mat-divider>
-      <mat-list-option  *ngFor="let item of menuText" [value]="item.text" color="primary" [selected]="item.select"
-        [routerLink]="[item.ruta]" >
-        <div class="flex flex-row items-center">
-          <li class="textList list-disc"></li>
-          <p class="textList my-2">{{item.text}}</p>
-        </div>
+<div class="h-[calc(100vh-64px)]">
+  <div class="flex flex-col h-full">
+    <div class="overflow-y-auto">
+      <mat-selection-list #shoes [multiple]="false" class="w-44 sm:w-48 md:w-52 lg:w-64" >
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="expandPanel" class="boxExpandPanel">
+            <mat-expansion-panel-header [ngClass]="{'matExpansion' : expandPanel}">
+              <mat-panel-title [ngClass]="{'text-white' : expandPanel}">
+                Textos
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider>
+            <mat-list-option  *ngFor="let item of menuText" [value]="item.text" color="primary" [selected]="item.select"
+              [routerLink]="[item.ruta]" >
+              <div class="flex flex-row items-center">
+                <li class="textList list-disc"></li>
+                <p class="textList my-2">{{item.text}}</p>
+              </div>
+              <mat-divider></mat-divider>
+            </mat-list-option>
+          </mat-expansion-panel>
+        </mat-accordion>
         <mat-divider></mat-divider>
-      </mat-list-option>
-    </mat-expansion-panel>
-  </mat-accordion>
-  <mat-divider></mat-divider>
-  <mat-list-option  *ngFor="let item of menu" [value]="item.text" color="primary" [selected]="item.select"
-   [routerLink]="[item.ruta]" >
-  {{item.text}}
-  <mat-divider></mat-divider>
-  </mat-list-option>
-</mat-selection-list>
+        <mat-list-option  *ngFor="let item of menu" [value]="item.text" color="primary" [selected]="item.select"
+        [routerLink]="[item.ruta]" >
+        {{item.text}}
+        <mat-divider></mat-divider>
+        </mat-list-option>
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="expandChartPanel" class="boxExpandPanel">
+            <mat-expansion-panel-header [ngClass]="{'matExpansion' : expandChartPanel}">
+              <mat-panel-title [ngClass]="{'text-white' : expandChartPanel}">
+                Gráficas
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider>
+            <mat-list-option  *ngFor="let item of menuCharts" [value]="item.text" color="primary" [selected]="item.select"
+              [routerLink]="[item.ruta]" >
+              <div class="flex flex-row items-center">
+                <li class="textList list-disc"></li>
+                <p class="textList my-2">{{item.text}}</p>
+              </div>
+              <mat-divider></mat-divider>
+            </mat-list-option>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-divider></mat-divider>
+      </mat-selection-list>
+    </div>
+  </div>
+</div>

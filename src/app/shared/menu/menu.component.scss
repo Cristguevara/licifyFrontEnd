@@ -22,3 +22,18 @@ mat-list-option[aria-selected="true"] {
 .boxExpandPanel{
   box-shadow: none !important;
 }
+
+
+// ::ng-deep.mat-expansion-indicator .mat-expansion-indicator::after {
+//   box-sizing: border-box !important;
+//   border-width: 0 !important;
+//   border-style: solid !important;
+//   border-color: rgb(0 0 0 / 87%) !important;
+// }
+
+// *, ::before, ::after {
+//   box-sizing: border-box;
+//   border-width: 0;
+//   border-style: solid;
+//   border-color: rgb(0 0 0 / 87%);
+// }

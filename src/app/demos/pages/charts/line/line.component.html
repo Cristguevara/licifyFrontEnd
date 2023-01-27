@@ -1,0 +1,16 @@
+<div class="flex flex-row items-center">
+  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12">stacked_line_chart</mat-icon>
+  <h1 class="font-bold text-xl mb-4">Gráficas de línea</h1>
+</div>
+<mat-divider></mat-divider>
+<div id="chart" class="mt-2">
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [dataLabels]="chartOptions.dataLabels"
+    [grid]="chartOptions.grid"
+    [stroke]="chartOptions.stroke"
+    [title]="chartOptions.title"
+  ></apx-chart>
+</div>

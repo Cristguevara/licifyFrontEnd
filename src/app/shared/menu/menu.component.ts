@@ -17,7 +17,9 @@ export class MenuComponent  implements OnInit{
 
   menu: MenuItem[] = []
   menuText: MenuItem[]=[]
+  menuCharts: MenuItem[]=[]
   expandPanel:boolean=false
+  expandChartPanel:boolean=false
 
   constructor(private location:Location, private router: Router ) { }
 
@@ -25,6 +27,7 @@ export class MenuComponent  implements OnInit{
     //console.log(this.location.path())
     this.router.events.subscribe(e=>{
       this.expandPanel=false
+      this.expandChartPanel=false
 
       let menuText=[
         {ruta: '/Componentes/texto', text: 'Texto normal' },
@@ -73,6 +76,24 @@ export class MenuComponent  implements OnInit{
         }
       })
       this.menu=menu
+
+      let menuCharts=[
+        {ruta: '/Componentes/graficas/lineal', text: 'Lineal' },
+        {ruta: '/Componentes/graficas/area', text: 'Área' },
+        {ruta: '/Componentes/graficas/columnas', text: 'Columnas' },
+        {ruta: '/Componentes/graficas/barras', text: 'Barras' },
+        {ruta: '/Componentes/graficas/dona', text: 'Dona' },
+        {ruta: '/Componentes/graficas/pie', text: 'pie' }
+      ]
+      menuCharts=menuCharts.map((e:any)=>{
+        if(e.ruta===this.location.path()){
+          this.expandChartPanel=true
+          return {...e, select:true}
+        }else{
+          return e
+        }
+      })
+      this.menuCharts=menuCharts
     })
   }
 

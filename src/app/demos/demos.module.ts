@@ -42,6 +42,14 @@ import { TextsWithImagesComponent } from './pages/texts/texts-with-images/texts-
 import { MultipleChoiseSomeComponent } from './pages/multiple-choise-some/multiple-choise-some.component';
 import { SelectionListSomeComponent } from './pages/selection-list-some/selection-list-some.component';
 import { SelectionListWithTextComponent } from './pages/selection-list-with-text/selection-list-with-text.component';
+import { LineComponent } from './pages/charts/line/line.component';
+import { AreaComponent } from './pages/charts/area/area.component';
+import { ColumnComponent } from './pages/charts/column/column.component';
+import { BarComponent } from './pages/charts/bar/bar.component';
+import { PieComponent } from './pages/charts/pie/pie.component';
+import { DonutComponent } from './pages/charts/donut/donut.component';
+import { ChartsComponent } from './pages/charts/charts.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 @NgModule({
@@ -70,7 +78,14 @@ import { SelectionListWithTextComponent } from './pages/selection-list-with-text
     TextsWithImagesComponent,
     MultipleChoiseSomeComponent,
     SelectionListSomeComponent,
-    SelectionListWithTextComponent
+    SelectionListWithTextComponent,
+    LineComponent,
+    AreaComponent,
+    ColumnComponent,
+    BarComponent,
+    PieComponent,
+    DonutComponent,
+    ChartsComponent
   ],
   imports: [
     CommonModule,
@@ -89,7 +104,8 @@ import { SelectionListWithTextComponent } from './pages/selection-list-with-text
     MatSliderModule,
     FormsModule,
     SwiperModule,
-    MatDividerModule
+    MatDividerModule,
+    NgApexchartsModule
   ]
 })
 export class DemosModule { }

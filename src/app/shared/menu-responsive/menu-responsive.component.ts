@@ -19,7 +19,9 @@ export class MenuResponsiveComponent implements OnInit {
 
     menu: MenuItem[] = []
     menuText: MenuItem[]=[]
+    menuCharts: MenuItem[]=[]
     expandPanel:boolean=false
+    expandChartPanel:boolean=false
 
     constructor(private location:Location, private router: Router ,public dialogRef: MatDialogRef<MenuResponsiveComponent>,
       @Inject(MAT_DIALOG_DATA) public data:string) { }
@@ -28,6 +30,7 @@ export class MenuResponsiveComponent implements OnInit {
       //console.log(this.location.path())
 
         this.expandPanel=false
+        this.expandChartPanel=false
 
         let menuText=[
           {ruta: '/Componentes/texto', text: 'Texto normal' },
@@ -76,6 +79,24 @@ export class MenuResponsiveComponent implements OnInit {
         })
         this.menu=menu
 
+
+        let menuCharts=[
+          {ruta: '/Componentes/graficas/lineal', text: 'Lineal' },
+          {ruta: '/Componentes/graficas/area', text: 'Área' },
+          {ruta: '/Componentes/graficas/columnas', text: 'Columnas' },
+          {ruta: '/Componentes/graficas/barras', text: 'Barras' },
+          {ruta: '/Componentes/graficas/dona', text: 'Dona' },
+          {ruta: '/Componentes/graficas/pie', text: 'pie' }
+        ]
+        menuCharts=menuCharts.map((e:any)=>{
+          if(e.ruta===this.location.path()){
+            this.expandChartPanel=true
+            return {...e, select:true}
+          }else{
+            return e
+          }
+        })
+        this.menuCharts=menuCharts
     }
 
 }
