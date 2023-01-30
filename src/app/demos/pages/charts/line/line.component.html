@@ -14,3 +14,43 @@
     [title]="chartOptions.title"
   ></apx-chart>
 </div>
+
+<div class="my-4 flex flex-row justify-center w-full" >
+  <button mat-raised-button (click)="changeBtn01()" *ngIf="btn01" class="bg-[#005883] text-white">Descripción de la gráfica</button>
+  <button mat-raised-button (click)="changeBtn01()" *ngIf="!btn01" class="bg-[#005883] text-white">Ocultar descripción de la gráfica</button>
+</div>
+
+<div class="overflow-hidden">
+  <div *ngIf="initBtn" [ngClass]="{'textOut': btn01,'textIn': !btn01}">
+    <p>Descripción de la gráfica:</p>
+    <p class="text-justify">
+      En la gráfica se observa la venta de escritorios medida en meses, desde enero hasta septiembre.
+    </p>
+    <p class="text-justify">
+      Tabla de datos:
+    </p>
+
+    <div class="flex flex-col items-center">
+      <div class="w-full max-w-[500px] grid grid-cols-2 gap-1">
+        <div class="w-full flex flex-col">
+          <div class="w-full border border-black mb-1 p-1">
+            <p class="m-0 text-center font-bold">Mes</p>
+          </div>
+          <div class="w-full border border-black mb-1 p-1" *ngFor="let item of xAxis">
+            <p class="m-0 text-center">{{item}}</p>
+          </div>
+        </div>
+
+        <div class="w-full flex flex-col">
+          <div class="w-full border border-black mb-1 p-1">
+            <p class="m-0 text-center font-bold">Cantidad</p>
+          </div>
+          <div class="w-full border border-black mb-1 p-1" *ngFor="let item of yAxis">
+            <p class="m-0 text-center">{{item}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

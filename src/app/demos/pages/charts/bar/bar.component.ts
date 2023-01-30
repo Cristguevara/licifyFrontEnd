@@ -27,17 +27,48 @@ export class BarComponent implements OnInit {
   @ViewChild("chart") chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions> | any;
 
+  xAxis:string[]=[
+    "Korea del sur",
+    "Canada",
+    "Reino unido",
+    "Países bajos",
+    "Italia",
+    "Francia",
+    "Japón",
+    "Estados unidos",
+    "China",
+    "Alemania"
+  ]
+
+  yAxis:number[]=[400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
+
   constructor() {
     this.chartOptions = {
       series: [
         {
-          name: "basic",
-          data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
+          name: "Cantidad",
+          data: this.yAxis
         }
       ],
       chart: {
         type: "bar",
-        height: 350
+        height: 350,
+        zoom: {
+          enabled: false
+        },
+        toolbar: {
+          show: true,
+          offsetX: 0,
+          offsetY: 0,
+          tools: {
+            download: false,
+            selection: true,
+            zoom: true,
+            zoomin: true,
+            zoomout: true,
+            pan: true,
+          },
+        }
       },
       plotOptions: {
         bar: {
@@ -48,23 +79,20 @@ export class BarComponent implements OnInit {
         enabled: false
       },
       xaxis: {
-        categories: [
-          "South Korea",
-          "Canada",
-          "United Kingdom",
-          "Netherlands",
-          "Italy",
-          "France",
-          "Japan",
-          "United States",
-          "China",
-          "Germany"
-        ]
+        categories: this.xAxis
       }
     };
   }
 
+  btn01:boolean=true
+  initBtn:boolean=false
+
   ngOnInit(): void {
+  }
+
+  changeBtn01(){
+    this.btn01=!this.btn01
+    this.initBtn=true
   }
 
 }

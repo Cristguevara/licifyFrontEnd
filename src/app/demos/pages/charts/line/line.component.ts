@@ -31,19 +31,45 @@ export class LineComponent implements OnInit {
   @ViewChild("chart") chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions> | any;
 
+  yAxis:number[]=[10, 41, 35, 51, 49, 62, 69, 91, 148]
+  xAxis:string[]= [
+    "Ene",
+    "Feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Sep"
+  ]
+
   constructor() {
     this.chartOptions = {
       series: [
         {
-          name: "Desktops",
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+          name: "Escritorios",
+          data: this.yAxis
         }
       ],
       chart: {
         height: 350,
         type: "line",
         zoom: {
-          enabled: false
+          enabled: true
+        },
+        toolbar: {
+          show: true,
+          offsetX: 0,
+          offsetY: 0,
+          tools: {
+            download: false,
+            selection: true,
+            zoom: true,
+            zoomin: true,
+            zoomout: true,
+            pan: true,
+          },
         }
       },
       dataLabels: {
@@ -53,7 +79,7 @@ export class LineComponent implements OnInit {
         curve: "straight"
       },
       title: {
-        text: "Product Trends by Month",
+        text: "Venta de escritorios por mes",
         align: "left"
       },
       grid: {
@@ -63,22 +89,20 @@ export class LineComponent implements OnInit {
         }
       },
       xaxis: {
-        categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep"
-        ]
+        categories: this.xAxis
       }
     };
   }
 
+  btn01:boolean=true
+  initBtn:boolean=false
+
   ngOnInit(): void {
+  }
+
+  changeBtn01(){
+    this.btn01=!this.btn01
+    this.initBtn=true
   }
 
 }

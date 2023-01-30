@@ -24,14 +24,17 @@ export class PieComponent implements OnInit {
   @ViewChild("chart") chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions> | any;
 
+  yAxis:number[]=[44, 55, 13, 43, 22]
+  xAxis:string[]= ["Equipo A", "Equipo B", "Equipo C", "Equipo D", "Equipo E"]
+
   constructor() {
     this.chartOptions = {
-      series: [44, 55, 13, 43, 22],
+      series: this.yAxis,
       chart: {
-        width: 380,
+        width: 500,
         type: "pie"
       },
-      labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+      labels: this.xAxis,
       responsive: [
         {
           breakpoint: 480,
@@ -48,7 +51,15 @@ export class PieComponent implements OnInit {
     };
   }
 
+  btn01:boolean=true
+  initBtn:boolean=false
+
   ngOnInit(): void {
+  }
+
+  changeBtn01(){
+    this.btn01=!this.btn01
+    this.initBtn=true
   }
 
 }

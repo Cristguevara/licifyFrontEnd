@@ -36,26 +36,56 @@ export class ColumnComponent implements OnInit {
 
   @ViewChild("chart") chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions> | any;
+  yAxis1:number[]=[44, 55, 57, 56, 61, 58, 63, 60, 66]
+  yAxis2:number[]=[76, 85, 101, 98, 87, 105, 91, 114, 94]
+  yAxis3:number[]=[35, 41, 36, 26, 45, 48, 52, 53, 41]
+  xAxis:string[]= [
+    "Feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Sep",
+    "Oct"
+  ]
 
   constructor() {
     this.chartOptions = {
       series: [
         {
-          name: "Net Profit",
+          name: "Beneficio neto",
           data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
         },
         {
-          name: "Revenue",
+          name: "Ingresos",
           data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
         },
         {
-          name: "Free Cash Flow",
+          name: "Flujo de caja libre",
           data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
         }
       ],
       chart: {
         type: "bar",
-        height: 350
+        height: 350,
+        zoom: {
+          enabled: true
+        },
+        toolbar: {
+          show: true,
+          offsetX: 0,
+          offsetY: 0,
+          tools: {
+            download: false,
+            selection: true,
+            zoom: true,
+            zoomin: true,
+            zoomout: true,
+            pan: true,
+          },
+        }
       },
       plotOptions: {
         bar: {
@@ -73,21 +103,11 @@ export class ColumnComponent implements OnInit {
         colors: ["transparent"]
       },
       xaxis: {
-        categories: [
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct"
-        ]
+        categories: this.xAxis
       },
       yaxis: {
         title: {
-          text: "$ (thousands)"
+          text: "$ (miles)"
         }
       },
       fill: {
@@ -96,14 +116,22 @@ export class ColumnComponent implements OnInit {
       tooltip: {
         y: {
           formatter: function(val:any) {
-            return "$ " + val + " thousands";
+            return "$ " + val + " miles";
           }
         }
       }
     };
   }
 
+  btn01:boolean=true
+  initBtn:boolean=false
+
   ngOnInit(): void {
+  }
+
+  changeBtn01(){
+    this.btn01=!this.btn01
+    this.initBtn=true
   }
 
 }

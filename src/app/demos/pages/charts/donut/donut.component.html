@@ -1,10 +1,59 @@
-<p>donut works!</p>
-<div id="chart">
-  <apx-chart
-    [series]="chartOptions.series"
-    [chart]="chartOptions.chart"
-    [labels]="chartOptions.labels"
-    [responsive]="chartOptions.responsive"
-  ></apx-chart>
+<div class="flex flex-row items-center">
+  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12">data_usage</mat-icon>
+  <h1 class="font-bold text-xl mb-4">Gráficas de dona</h1>
 </div>
+<mat-divider></mat-divider>
+
+<p class="font-bold mt-2 text-xl">Gráfica de puntajes por equipos</p>
+<div class="w-full flex flex-col items-center">
+  <div id="chart" class="w-[500px]">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [labels]="chartOptions.labels"
+      [responsive]="chartOptions.responsive"
+    ></apx-chart>
+  </div>
+</div>
+
+<div class="my-4 flex flex-row justify-center w-full" >
+  <button mat-raised-button (click)="changeBtn01()" *ngIf="btn01" class="bg-[#005883] text-white">Descripción de la gráfica</button>
+  <button mat-raised-button (click)="changeBtn01()" *ngIf="!btn01" class="bg-[#005883] text-white">Ocultar descripción de la gráfica</button>
+</div>
+
+<div class="overflow-hidden">
+  <div *ngIf="initBtn" [ngClass]="{'textOut': btn01,'textIn': !btn01}">
+    <p>Descripción de la gráfica:</p>
+    <p class="text-justify">
+      En la gráfica se observan los equipos con sus puntajes.
+    </p>
+    <p class="text-justify">
+      Tabla de datos:
+    </p>
+
+    <div class="flex flex-col items-center">
+      <div class="w-full max-w-[500px] grid grid-cols-2 gap-1">
+        <div class="w-full flex flex-col">
+          <div class="w-full border border-black mb-1 p-1">
+            <p class="m-0 text-center font-bold">Equipo</p>
+          </div>
+          <div class="w-full border border-black mb-1 p-1" *ngFor="let item of xAxis">
+            <p class="m-0 text-center">{{item}}</p>
+          </div>
+        </div>
+
+        <div class="w-full flex flex-col">
+          <div class="w-full border border-black mb-1 p-1">
+            <p class="m-0 text-center font-bold">Puntaje</p>
+          </div>
+          <div class="w-full border border-black mb-1 p-1" *ngFor="let item of yAxis">
+            <p class="m-0 text-center">{{item}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
