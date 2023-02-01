@@ -23,6 +23,16 @@ mat-list-option[aria-selected="true"] {
   box-shadow: none !important;
 }
 
+::ng-deep.ClassTool{
+  font-size: 0;
+  width: 130px;
+  height: 125px;
+  background-image: url('../../../assets/images/Video\ 11.\ Imagen.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
 
 // ::ng-deep.mat-expansion-indicator .mat-expansion-indicator::after {
 //   box-sizing: border-box !important;

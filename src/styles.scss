@@ -45,7 +45,7 @@ $proyectoDemo-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 * {
-      font-family:'Franklin Gothic Book', 'Arial Narrow', Arial, sans-serif
+      font-family:'Franklin Gothic Book', 'Arial Narrow', Arial, sans-serif;
     }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body { margin: 0;  }
@@ -89,7 +89,7 @@ h1{
 
 .btnNext {
   font-family: inherit;
-  font-size: 20px;
+  font-size: 1.25rem;
   background: #005883;
   color: white;
   padding: 0.3em 0.3em;
@@ -142,7 +142,7 @@ h1{
 
 .btnBack {
   font-family: inherit;
-  font-size: 20px;
+  font-size: 1.25rem;
   background: #005883;
   color: white;
   padding: 0.3em 0.3em;

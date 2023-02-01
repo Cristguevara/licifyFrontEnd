@@ -1,6 +1,6 @@
 <div class="flex flex-row items-center">
-  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12">data_usage</mat-icon>
-  <h1 class="font-bold text-xl mb-4">Gráficas de dona</h1>
+  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12 mr-2">data_usage</mat-icon>
+  <h1 class="font-bold text-3xl">Gráficas de dona</h1>
 </div>
 <mat-divider></mat-divider>
 
@@ -56,4 +56,23 @@
   </div>
 </div>
 
+<div class="flex flex-row justify-between mt-4">
+  <button class="btnBack" [routerLink]="['/Componentes/graficas/barras']">
+    <span>Anterior</span>
+    <div class="svg-wrapper-1">
+      <div class="svg-wrapper">
+        <mat-icon class="icon-size-6 text-black-500">arrow_back</mat-icon>
+      </div>
+    </div>
+  </button>
+
+  <button class="btnNext" [routerLink]="['/Componentes/graficas/pie']" >
+    <div class="svg-wrapper-1">
+      <div class="svg-wrapper">
+        <mat-icon class="icon-size-6 text-black-500">arrow_forward</mat-icon>
+      </div>
+    </div>
+    <span>Siguiente</span>
+  </button>
+</div>
 

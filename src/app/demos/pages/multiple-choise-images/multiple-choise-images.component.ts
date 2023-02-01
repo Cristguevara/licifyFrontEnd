@@ -33,6 +33,7 @@ export class MultipleChoiseImagesComponent implements OnInit {
     if(this.form.value.first==='1'){
       this.feedbackContainer=true
       this.check=true
+      this.textFeedback='Felicitaciones, lo hiciste muy bien.'
     }else{
       this.feedbackContainer=true
       this.check=false

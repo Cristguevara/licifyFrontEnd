@@ -50,6 +50,8 @@ import { PieComponent } from './pages/charts/pie/pie.component';
 import { DonutComponent } from './pages/charts/donut/donut.component';
 import { ChartsComponent } from './pages/charts/charts.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 
 @NgModule({
@@ -85,7 +87,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     BarComponent,
     PieComponent,
     DonutComponent,
-    ChartsComponent
+    ChartsComponent,
+
   ],
   imports: [
     CommonModule,
@@ -105,7 +108,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     FormsModule,
     SwiperModule,
     MatDividerModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    MatTooltipModule
   ]
 })
 export class DemosModule { }

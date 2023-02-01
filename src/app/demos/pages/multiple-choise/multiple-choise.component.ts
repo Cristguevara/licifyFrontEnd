@@ -31,12 +31,11 @@ export class MultipleChoiseComponent implements OnInit {
   }
 
   askQuestion(){
+    this.feedbackContainer=true
     if(this.form.value.first==='2'){
-      this.feedbackContainer=true
       this.check=true
       this.textFeedback='Felicitaciones, lo hiciste muy bien.'
     }else{
-      this.feedbackContainer=true
       this.check=false
       this.textFeedback='No lograste aprobar la pregunta, pero esfuerzate para la próxima.'
     }

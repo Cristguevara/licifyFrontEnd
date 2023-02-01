@@ -38,18 +38,31 @@ export class MultipleChoiseSomeComponent implements OnInit {
       title:'',
       text:''
     }
-    if(id===1){
+
+    if(id===1 && this.wrong01){
       data.title='Ejercicio A'
       data.text='2+2 es igual a 4'
-    }else if(id===2){
+    }else if(id===2 && this.wrong02){
       data.title='Ejercicio B'
       data.text='4+6 es igual a 10'
-    }else if(id===3){
+    }else if(id===3 && this.wrong03){
       data.title='Ejercicio C'
       data.text='3+2 es igual a 5'
-    }else if(id===4){
+    }else if(id===4 && this.wrong04){
       data.title='Ejercicio D'
       data.text='7+1 es igual a 8'
+    }else if(id===1 && this.good01){
+      data.title='Ejercicio A'
+      data.text='Felicitaciones, lo hiciste muy bien.'
+    }else if(id===2 && this.good02){
+      data.title='Ejercicio B'
+      data.text='Felicitaciones, lo hiciste muy bien.'
+    }else if(id===3 && this.good03){
+      data.title='Ejercicio C'
+      data.text='Felicitaciones, lo hiciste muy bien.'
+    }else if(id===4 && this.good04){
+      data.title='Ejercicio D'
+      data.text='Felicitaciones, lo hiciste muy bien.'
     }
 
     this.dialog.open(FeedbackComponent, {

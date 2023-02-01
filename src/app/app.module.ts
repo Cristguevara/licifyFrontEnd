@@ -17,12 +17,15 @@ import { MenuResponsiveComponent } from './shared/menu-responsive/menu-responsiv
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { NgApexchartsModule } from "ng-apexcharts";
+import { AccesibilityComponent } from './demos/components/accesibility/accesibility.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    MenuResponsiveComponent
+    MenuResponsiveComponent,
+    AccesibilityComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { NgApexchartsModule } from "ng-apexcharts";
     MatNativeDateModule,
     MatDialogModule,
     MatExpansionModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

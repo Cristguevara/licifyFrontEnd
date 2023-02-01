@@ -1,6 +1,6 @@
 <div class="flex flex-row items-center">
-  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12">description</mat-icon>
-  <h1 class="font-bold text-xl mb-4">Conjunto de selección múltiple</h1>
+  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12 mr-2">description</mat-icon>
+  <h1 class="font-bold text-3xl">Conjunto de selección múltiple</h1>
 </div>
 <mat-divider></mat-divider>
 
@@ -21,13 +21,13 @@
         <mat-icon class="flex text-red-600 material-icons-outlined text-5xl w-12 h-12 mr-2">cancel</mat-icon>
         <p class="m-0">Respuesta incorrecta</p>
       </div>
-      <button mat-raised-button *ngIf="wrong01" class="bg-[#005883] text-white" (click)="openFeedback(1)">Ver retroalimentación</button>
 
 
       <div class="flex flex-row items-center mt-2" *ngIf="good01">
         <mat-icon class="flex text-green-600 material-icons-outlined text-5xl w-12 h-12 mr-2">check_circle</mat-icon>
         <p class="m-0">Bien Hecho</p>
       </div>
+      <button mat-raised-button *ngIf="disableQuestions" class="bg-[#005883] text-white" (click)="openFeedback(1)">Ver retroalimentación</button>
     </div>
 
     <div class="mt-2">
@@ -44,13 +44,13 @@
       <mat-icon class="flex text-red-600 material-icons-outlined text-5xl w-12 h-12 mr-2">cancel</mat-icon>
       <p class="m-0">Respuesta incorrecta</p>
     </div>
-    <button mat-raised-button *ngIf="wrong02" class="bg-[#005883] text-white" (click)="openFeedback(2)">Ver retroalimentación</button>
 
 
     <div class="flex flex-row items-center mt-2" *ngIf="good02">
       <mat-icon class="flex text-green-600 material-icons-outlined text-5xl w-12 h-12 mr-2">check_circle</mat-icon>
       <p class="m-0">Bien Hecho</p>
     </div>
+    <button mat-raised-button *ngIf="disableQuestions" class="bg-[#005883] text-white" (click)="openFeedback(2)">Ver retroalimentación</button>
 
     <div class="mt-2">
       <p class="text-lg">C. ¿Cuánto es 3+2?</p>
@@ -66,13 +66,13 @@
       <mat-icon class="flex text-red-600 material-icons-outlined text-5xl w-12 h-12 mr-2">cancel</mat-icon>
       <p class="m-0">Respuesta incorrecta</p>
     </div>
-    <button mat-raised-button *ngIf="wrong03" class="bg-[#005883] text-white" (click)="openFeedback(3)">Ver retroalimentación</button>
 
 
     <div class="flex flex-row items-center mt-2" *ngIf="good03">
       <mat-icon class="flex text-green-600 material-icons-outlined text-5xl w-12 h-12 mr-2">check_circle</mat-icon>
       <p class="m-0">Bien Hecho</p>
     </div>
+    <button mat-raised-button *ngIf="disableQuestions" class="bg-[#005883] text-white" (click)="openFeedback(3)">Ver retroalimentación</button>
 
     <div class="mt-2">
       <p class="text-lg">D. ¿Cuánto es 7+1?</p>
@@ -88,13 +88,13 @@
       <mat-icon class="flex text-red-600 material-icons-outlined text-5xl w-12 h-12 mr-2">cancel</mat-icon>
       <p class="m-0">Respuesta incorrecta</p>
     </div>
-    <button mat-raised-button *ngIf="wrong03" class="bg-[#005883] text-white" (click)="openFeedback(4)">Ver retroalimentación</button>
 
     <div class="flex flex-row items-center mt-2" *ngIf="good04">
       <mat-icon class="flex text-green-600 material-icons-outlined text-5xl w-12 h-12 mr-2">check_circle</mat-icon>
       <p class="m-0">Bien Hecho</p>
     </div>
 
+    <button mat-raised-button *ngIf="disableQuestions" class="bg-[#005883] text-white" (click)="openFeedback(4)">Ver retroalimentación</button>
 
     <div class="my-4 w-full items-center flex flex-col">
       <button mat-raised-button *ngIf="!disableQuestions" (click)="checkAnswers()" disabled="{{form.invalid}}" class="bg-[#005883] text-white">Revisar Respuestas</button>
