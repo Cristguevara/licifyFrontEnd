@@ -4,13 +4,20 @@
       <mat-selection-list #shoes [multiple]="false" class="w-44 sm:w-48 md:w-52 lg:w-64" >
         <mat-accordion>
           <mat-expansion-panel [expanded]="expandPanel" class="boxExpandPanel">
-            <mat-expansion-panel-header [ngClass]="{'matExpansion' : expandPanel}" >
+            <mat-expansion-panel-header [ngClass]="{'matExpansion' : expandPanel}"
+            matTooltip="hey"
+            matTooltipClass="ClassTool"
+            matTooltipPosition="right">
               <mat-panel-title [ngClass]="{'text-white' : expandPanel}">
                 Textos
               </mat-panel-title>
             </mat-expansion-panel-header>
             <mat-divider></mat-divider>
-            <mat-list-option  *ngFor="let item of menuText" [value]="item.text" color="primary" [selected]="item.select"
+            <mat-list-option
+            matTooltip="hey"
+            matTooltipClass="ClassTool"
+            matTooltipPosition="right"
+            *ngFor="let item of menuText" [value]="item.text" color="primary" [selected]="item.select"
               [routerLink]="[item.ruta]" >
               <div class="flex flex-row items-center">
                 <li class="textList list-disc"></li>
@@ -22,7 +29,9 @@
         </mat-accordion>
         <mat-divider></mat-divider>
         <mat-list-option
-        
+        matTooltip="hey"
+        matTooltipClass="ClassTool"
+        matTooltipPosition="right"
          *ngFor="let item of menu" [value]="item.text" color="primary" [selected]="item.select"
         [routerLink]="[item.ruta]" >
         {{item.text}}
@@ -30,13 +39,20 @@
         </mat-list-option>
         <mat-accordion>
           <mat-expansion-panel [expanded]="expandChartPanel" class="boxExpandPanel">
-            <mat-expansion-panel-header [ngClass]="{'matExpansion' : expandChartPanel}">
+            <mat-expansion-panel-header [ngClass]="{'matExpansion' : expandChartPanel}"
+            matTooltip="hey"
+            matTooltipClass="ClassTool"
+            matTooltipPosition="right">
               <mat-panel-title [ngClass]="{'text-white' : expandChartPanel}">
                 Gráficas
               </mat-panel-title>
             </mat-expansion-panel-header>
             <mat-divider></mat-divider>
-            <mat-list-option  *ngFor="let item of menuCharts" [value]="item.text" color="primary" [selected]="item.select"
+            <mat-list-option
+            matTooltip="hey"
+            matTooltipClass="ClassTool"
+            matTooltipPosition="right"
+            *ngFor="let item of menuCharts" [value]="item.text" color="primary" [selected]="item.select"
               [routerLink]="[item.ruta]" >
               <div class="flex flex-row items-center">
                 <li class="textList list-disc"></li>
