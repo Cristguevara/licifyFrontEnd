@@ -51,6 +51,11 @@ import { DonutComponent } from './pages/charts/donut/donut.component';
 import { ChartsComponent } from './pages/charts/charts.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MainScreenComponent } from './main-screen/main-screen.component';
+import { MenuComponent } from '../shared/menu/menu.component';
+import { MenuResponsiveComponent } from '../shared/menu-responsive/menu-responsive.component';
+import { AccesibilityComponent } from './components/accesibility/accesibility.component';
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -88,7 +93,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     PieComponent,
     DonutComponent,
     ChartsComponent,
-
+    MainScreenComponent,
+    MenuComponent,
+    MenuResponsiveComponent,
+    AccesibilityComponent,
   ],
   imports: [
     CommonModule,
@@ -109,7 +117,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     SwiperModule,
     MatDividerModule,
     NgApexchartsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatListModule
   ]
 })
 export class DemosModule { }

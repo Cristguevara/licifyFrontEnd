@@ -15,40 +15,7 @@ interface MenuItem {
 })
 export class MenuComponent  implements OnInit{
 
-  menu: MenuItem[] = []
-  menuText: MenuItem[]=[]
-  menuCharts: MenuItem[]=[]
-  expandPanel:boolean=false
-  expandChartPanel:boolean=false
-
-  constructor(private location:Location, private router: Router ) { }
-
-  ngOnInit(): void {
-    //console.log(this.location.path())
-    this.router.events.subscribe(e=>{
-      this.expandPanel=false
-      this.expandChartPanel=false
-
-      let menuText=[
-        {ruta: '/Componentes/texto', text: 'Texto normal' },
-        {ruta: '/Componentes/texto/mapa-conceptual', text: 'Mapa conceptual texto' },
-        {ruta: '/Componentes/texto/caja-de-texto-animada', text: 'Cajas de texto animadas y audio' },
-        {ruta: '/Componentes/texto/iconos-botones-para-desplegar-texto', text: 'Iconos y botones para desplegar texto' },
-        {ruta: '/Componentes/texto/cajas-de-informacion', text: 'Botones para desplegar información' },
-        {ruta: '/Componentes/texto/mapa-conceptual-con-botones', text: 'Mapa conceptual con botones' },
-        {ruta: '/Componentes/texto/textos-con-imagenes', text: 'Textos con imágenes' }
-      ]
-      menuText=menuText.map((e:any)=>{
-        if(e.ruta===this.location.path()){
-          this.expandPanel=true
-          return {...e, select:true}
-        }else{
-          return e
-        }
-      })
-      this.menuText=menuText
-
-      let menu=[
+  menu: MenuItem[] = [
         //{ruta: '/Componentes/texto', text: 'Texto'},
         {ruta: '/Componentes/imagenes', text: 'Imágenes'},
         {ruta: '/Componentes/video', text: 'Videos'},
@@ -67,17 +34,16 @@ export class MenuComponent  implements OnInit{
         {ruta: '/Componentes/entrada-texto', text: 'Entrada de texto'},
         {ruta: '/Componentes/resultados', text: 'Resultados de evaluación'},
       ]
-
-      menu=menu.map((e:any)=>{
-        if(e.ruta===this.location.path()){
-          return {...e, select:true}
-        }else{
-          return e
-        }
-      })
-      this.menu=menu
-
-      let menuCharts=[
+  menuText: MenuItem[]=[
+        {ruta: '/Componentes/texto', text: 'Texto normal' },
+        {ruta: '/Componentes/texto/mapa-conceptual', text: 'Mapa conceptual texto' },
+        {ruta: '/Componentes/texto/caja-de-texto-animada', text: 'Cajas de texto animadas y audio' },
+        {ruta: '/Componentes/texto/iconos-botones-para-desplegar-texto', text: 'Iconos y botones para desplegar texto' },
+        {ruta: '/Componentes/texto/cajas-de-informacion', text: 'Botones para desplegar información' },
+        {ruta: '/Componentes/texto/mapa-conceptual-con-botones', text: 'Mapa conceptual con botones' },
+        {ruta: '/Componentes/texto/textos-con-imagenes', text: 'Textos con imágenes' }
+      ]
+  menuCharts: MenuItem[]=[
         {ruta: '/Componentes/graficas/lineal', text: 'Lineal' },
         {ruta: '/Componentes/graficas/area', text: 'Área' },
         {ruta: '/Componentes/graficas/columnas', text: 'Columnas' },
@@ -85,15 +51,41 @@ export class MenuComponent  implements OnInit{
         {ruta: '/Componentes/graficas/dona', text: 'Dona' },
         {ruta: '/Componentes/graficas/pie', text: 'pie' }
       ]
-      menuCharts=menuCharts.map((e:any)=>{
-        if(e.ruta===this.location.path()){
-          this.expandChartPanel=true
-          return {...e, select:true}
-        }else{
-          return e
-        }
-      })
-      this.menuCharts=menuCharts
+  expandPanel:boolean=false
+  expandChartPanel:boolean=false
+  _location:string=''
+
+  constructor(private location:Location, private router: Router ) { }
+
+  ngOnInit(): void {
+
+    this._location=this.location.path()
+    //console.log(this.location.path())
+
+    if(this.location.path().includes('/Componentes/texto')){
+      this.expandPanel=true
+    }else{
+      this.expandPanel=false
+    }
+
+    if(this.location.path().includes('/Componentes/graficas')){
+      this.expandChartPanel=true
+    }else{
+      this.expandChartPanel=false
+    }
+
+    this.router.events.subscribe(e=>{
+      if(this.location.path().includes('/Componentes/texto')){
+        this.expandPanel=true
+      }else{
+        this.expandPanel=false
+      }
+
+      if(this.location.path().includes('/Componentes/graficas')){
+        this.expandChartPanel=true
+      }else{
+        this.expandChartPanel=false
+      }
     })
   }
 

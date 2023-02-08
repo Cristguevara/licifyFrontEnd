@@ -30,10 +30,12 @@ import { ColumnComponent } from './pages/charts/column/column.component';
 import { BarComponent } from './pages/charts/bar/bar.component';
 import { DonutComponent } from './pages/charts/donut/donut.component';
 import { PieComponent } from './pages/charts/pie/pie.component';
+import { MainScreenComponent } from './main-screen/main-screen.component';
 
 const routes: Routes = [
   {
     path: "",
+    component:MainScreenComponent,
     children: [
       {path: 'acordeon', component: AcordeonComponent },
       {path: 'iframe', component: IframeComponent },

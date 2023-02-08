@@ -17,7 +17,7 @@
             matTooltip="hey"
             matTooltipClass="ClassTool"
             matTooltipPosition="right"
-            *ngFor="let item of menuText" [value]="item.text" color="primary" [selected]="item.select"
+            *ngFor="let item of menuText" [value]="item.text" color="primary" [selected]="item.ruta===_location"
               [routerLink]="[item.ruta]" >
               <div class="flex flex-row items-center">
                 <li class="textList list-disc"></li>
@@ -32,7 +32,7 @@
         matTooltip="hey"
         matTooltipClass="ClassTool"
         matTooltipPosition="right"
-         *ngFor="let item of menu" [value]="item.text" color="primary" [selected]="item.select"
+         *ngFor="let item of menu" [value]="item.text" color="primary" [selected]="item.ruta===_location"
         [routerLink]="[item.ruta]" >
         {{item.text}}
         <mat-divider></mat-divider>
@@ -52,7 +52,7 @@
             matTooltip="hey"
             matTooltipClass="ClassTool"
             matTooltipPosition="right"
-            *ngFor="let item of menuCharts" [value]="item.text" color="primary" [selected]="item.select"
+            *ngFor="let item of menuCharts" [value]="item.text" color="primary" [selected]="item.ruta===_location"
               [routerLink]="[item.ruta]" >
               <div class="flex flex-row items-center">
                 <li class="textList list-disc"></li>
