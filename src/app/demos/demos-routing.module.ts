@@ -31,18 +31,19 @@ import { BarComponent } from './pages/charts/bar/bar.component';
 import { DonutComponent } from './pages/charts/donut/donut.component';
 import { PieComponent } from './pages/charts/pie/pie.component';
 import { MainScreenComponent } from './main-screen/main-screen.component';
+import { IntroComponent } from './pages/intro/intro.component';
 
 const routes: Routes = [
   {
     path: "",
     component:MainScreenComponent,
     children: [
+      {path: '', component: IntroComponent },
       {path: 'acordeon', component: AcordeonComponent },
       {path: 'iframe', component: IframeComponent },
       {path: 'imagenes', component: ImagesComponent },
       {path: 'galeria-imagenes', component: ImagesGaleryComponent },
       {path: 'entrada-texto', component: InputTextComponent },
-      //{path: 'intro', component: IntroComponent },
       {path: 'seleccion-multiple', component:  MultipleChoiseComponent },
       {path: 'varias-seleccion-multiple', component:  MultipleChoiseSomeComponent },
       {path: 'verificacion-opciones', component:  CheckOptionsComponent },
@@ -53,7 +54,6 @@ const routes: Routes = [
       {path: 'presentacion-diapositivas', component:  SlidePresentationComponent },
       {path: 'control-deslizante', component:  SliderComponent },
       {path: 'texto',
-      //component: TextsComponent,
       children:[
         {path: '', component: TextsComponent },
         {path: 'mapa-conceptual', component: ConceptualMapComponent },
@@ -74,7 +74,7 @@ const routes: Routes = [
         {path: 'dona', component: DonutComponent },
         {path: 'pie', component: PieComponent },
       ]},
-      {path: '**', redirectTo:  'texto' }
+      {path: '**', redirectTo:  '' }
     ]
   }
 ];

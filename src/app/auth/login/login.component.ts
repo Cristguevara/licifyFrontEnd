@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.router.navigate(['/Componentes/texto'])
+    this.router.navigate(['/Componentes'])
     localStorage.setItem('TokenDemo','info-deltoken-demo')
   }
 

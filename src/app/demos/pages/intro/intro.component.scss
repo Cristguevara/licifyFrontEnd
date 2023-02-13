@@ -1,0 +1,11 @@
+.textList{
+  font-size: 14px !important;
+}
+
+.textList:hover{
+  color:#F0B429;
+}
+
+::ng-deep.mat-expansion-panel-body {
+  padding: 0 !important;
+}

@@ -54,9 +54,10 @@ h1{
   color: #005883;
   margin: 0 !important;
 }
-// *, ::before, ::after {
-//   border-color: none !important;
-// }
+
+.mat-expansion-indicator, ::before, ::after {
+  border-color: #0000008a ;
+}
 
 .textIn
 {
