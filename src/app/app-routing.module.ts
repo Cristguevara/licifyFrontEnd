@@ -14,7 +14,7 @@ const routes: Routes = [
     canLoad: [ValidateTokenGuard]
   },
   {
-    path: '**', redirectTo: 'auth'
+    path: '**', redirectTo: 'Componentes'
   }
 ];
 

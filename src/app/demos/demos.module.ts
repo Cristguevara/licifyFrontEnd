@@ -56,6 +56,7 @@ import { MenuComponent } from '../shared/menu/menu.component';
 import { MenuResponsiveComponent } from '../shared/menu-responsive/menu-responsive.component';
 import { AccesibilityComponent } from './components/accesibility/accesibility.component';
 import { MatListModule } from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -118,7 +119,8 @@ import { MatListModule } from '@angular/material/list';
     MatDividerModule,
     NgApexchartsModule,
     MatTooltipModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
   ]
 })
 export class DemosModule { }

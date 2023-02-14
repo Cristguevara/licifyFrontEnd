@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MenuResponsiveComponent } from 'src/app/shared/menu-responsive/menu-responsive.component';
+import { AuthService } from '../../auth/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-screen',
@@ -9,9 +11,14 @@ import { MenuResponsiveComponent } from 'src/app/shared/menu-responsive/menu-res
 })
 export class MainScreenComponent implements OnInit {
 
-  title = 'proyectoDemo';
-  value = 'Clear me';
-  constructor(public dialog: MatDialog) { }
+
+  constructor(
+    public  dialog      : MatDialog,
+    private authService : AuthService,
+    private router      : Router
+  ) { }
+
+  get user(){ return this.authService.user}
 
   openMenu(): void{
 
@@ -23,6 +30,12 @@ export class MainScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.user)
+  }
+
+  logout(){
+    this.authService.logout()
+    this.router.navigate(['/auth'])
   }
 
 }
