@@ -30,11 +30,11 @@ export class MainScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.user)
+    //console.log(this.user)
   }
 
   logout(){
-    this.authService.logout()
+    //this.authService.logout()
     this.router.navigate(['/auth'])
   }
 

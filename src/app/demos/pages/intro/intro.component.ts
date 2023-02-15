@@ -31,6 +31,10 @@ export class IntroComponent implements OnInit {
     {ruta: '/Componentes/iframe', text: 'Iframe'},
   ]
 
+  acordeonComponents: any[]=[
+    {ruta: '/Componentes/acordeon', text: 'Acordeón'},
+  ]
+
   questionComponents: any[]=[
     {ruta: '/Componentes/seleccion-multiple', text: 'Selección múltiple'},
     {ruta: '/Componentes/varias-seleccion-multiple', text: 'Conjunto de selección múltiple'},

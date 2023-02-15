@@ -57,6 +57,7 @@ import { MenuResponsiveComponent } from '../shared/menu-responsive/menu-responsi
 import { AccesibilityComponent } from './components/accesibility/accesibility.component';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
+import { TitleWithLSCComponent } from './components/title-with-lsc/title-with-lsc.component';
 
 
 
@@ -98,6 +99,7 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     MenuResponsiveComponent,
     AccesibilityComponent,
+    TitleWithLSCComponent,
   ],
   imports: [
     CommonModule,

@@ -60,7 +60,6 @@ export class MenuComponent  implements OnInit{
   ngOnInit(): void {
 
     this._location=this.location.path()
-    //console.log(this.location.path())
 
     if(this.location.path().includes('/Componentes/texto')){
       this.expandPanel=true
@@ -75,6 +74,8 @@ export class MenuComponent  implements OnInit{
     }
 
     this.router.events.subscribe(e=>{
+      this._location=this.location.path()
+
       if(this.location.path().includes('/Componentes/texto')){
         this.expandPanel=true
       }else{

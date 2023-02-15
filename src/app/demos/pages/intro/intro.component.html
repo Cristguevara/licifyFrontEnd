@@ -1,8 +1,4 @@
-<div class="flex flex-row items-center">
-  <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12 mr-2">description</mat-icon>
-  <h1 class="font-bold text-3xl">Componentes</h1>
-</div>
-<mat-divider></mat-divider>
+<app-title-with-lsc [title]="'Componentes'" [nameVideo]="'Video 18. Coincidencia de pregunta.mov'"></app-title-with-lsc>
 
 <div class="my-4 w-full flex flex-col items-center">
   <mat-accordion class="flex flex-col w-full max-w-7xl">
@@ -62,6 +58,22 @@
       </mat-expansion-panel-header>
       <mat-selection-list [multiple]="false" class="pl-3 pt-0">
         <mat-list-option *ngFor="let item of docsComponents" [value]="item.text" color="primary" [routerLink]="[item.ruta]" class="textList">
+          <div class="flex flex-row items-center">
+            <li class="textList list-disc"></li>
+            <p class="textList my-2">{{item.text}}</p>
+          </div>
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Componentes de acordeón
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-selection-list [multiple]="false" class="pl-3 pt-0">
+        <mat-list-option *ngFor="let item of acordeonComponents" [value]="item.text" color="primary" [routerLink]="[item.ruta]" class="textList">
           <div class="flex flex-row items-center">
             <li class="textList list-disc"></li>
             <p class="textList my-2">{{item.text}}</p>

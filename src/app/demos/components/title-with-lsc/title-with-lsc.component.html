@@ -1,0 +1,10 @@
+<div class="flex flex-row items-center justify-between">
+  <div class="flex flex-row items-center">
+    <mat-icon class="flex text-[#F0B429] material-icons-outlined text-5xl w-12 h-12 mr-2">description</mat-icon>
+    <h1 class="font-bold text-3xl">{{title}}</h1>
+  </div>
+  <button mat-raised-button (click)="ShowLSC()" *ngIf="btnLSC" class="bg-[#005883] text-white" >Ver LSC</button>
+  <button mat-raised-button (click)="ShowLSC()" *ngIf="!btnLSC" class="bg-[#005883] text-white" >Ocultar LSC</button>
+</div>
+<video #videoElement class="hidden"  src="../../../../assets/videos/{{nameVideo}}"></video>
+<mat-divider></mat-divider>
