@@ -10,12 +10,11 @@ const routes: Routes = [
   {
     path: 'Componentes',
     loadChildren: () => import('./demos/demos.module').then(m => m.DemosModule),
-    // canActivate: [ValidateTokenGuard],
-    // canLoad: [ValidateTokenGuard]
+    canActivate: [ValidateTokenGuard],
+    canLoad: [ValidateTokenGuard]
   },
   {
-    //path: '**', redirectTo: 'Componentes'
-    path: '**', redirectTo: 'auth'
+    path: '**', redirectTo: 'Componentes'
   }
 ];
 

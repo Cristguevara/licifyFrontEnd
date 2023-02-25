@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   isError      : boolean = false
 
   form:FormGroup=this.fb.group({
-    email    : ['info@w-techsas.com', [Validators.required, Validators.email]],
+    email    : ['cristian@gmail.com', [Validators.required, Validators.email]],
     password : ['123456', [Validators.required, Validators.minLength(6)]]
   })
 
@@ -39,18 +39,17 @@ export class LoginComponent implements OnInit {
 
   login(){
 
-    this.router.navigate(['/Componentes'])
-
     const { email, password } = this.form.value
 
-    // this.authService.login(email,password).subscribe(ok => {
-    //   if(ok===true){
-    //     this.router.navigate(['/Componentes'])
-    //   }else{
-    //     this.messageError = ok
-    //     this.isError      = true
-    //   }
-    // })
+    this.authService.login(email,password).subscribe(ok => {
+      if(ok===true){
+        this.router.navigate(['/Componentes'])
+      }else{
+        this.messageError = ok
+        this.isError      = true
+      }
+    })
+    
   }
 
 }
