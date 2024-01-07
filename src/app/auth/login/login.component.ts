@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit,AfterViewInit {
   isError      : boolean = false
 
   form:FormGroup=this.fb.group({
-    email    : ['constructor@gmail.com', [Validators.required, Validators.email]],
-    password : ['welcome', [Validators.required, Validators.minLength(6)]]
+    email    : ['', [Validators.required, Validators.email]],
+    password : ['', [Validators.required, Validators.minLength(6)]]
   })
 
   constructor(
