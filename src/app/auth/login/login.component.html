@@ -1,15 +1,14 @@
-<div class="w-full flex flex-row h-screen">
-  <div class="w-1/2 flex flex-col items-end h-full justify-center">
-    <img src="../../../assets/images/img-entrada.jpg" class="max-w-3xl w-full">
+<div class="w-full flex flex-col md:flex-row h-screen">
+  <div class="w-full md:w-1/2 flex flex-col items-center md:items-end h-auto justify-center">
+    <div id="lottie-container-login" class="w-[90%] h-auto" ></div>
   </div>
 
-  <div class="w-1/2 flex flex-col items-start">
+  <div class="w-full md:w-1/2 flex flex-col items-center justify-center">
     <div class="flex flex-col items-center">
-      <img src="../../../assets/images/logo-unad.png" class="my-20">
-
-      <div class="shadow-md p-10 shadow-gray-400 rounded-md flex flex-col items-center">
-        <p class="text-3xl my-3 text-[#005883]">Inicio de sesión</p>
-        <form  class="flex flex-col w-96" [formGroup]="form">
+      <p class="mb-2 md:mb-4 text-xl md:text-3xl text-[#005883] font-semibold">Licify App</p>
+      <div class="shadow-md p-6 md:p-10 shadow-gray-400 rounded-md flex flex-col items-center">
+        <p class="text-xl md:text-3xl my-3 text-[#005883]">Inicio de sesión</p>
+        <form  class="flex flex-col w-[90%] md:w-96" [formGroup]="form">
           <mat-form-field appearance="fill" class="my-3">
             <mat-icon matPrefix  class="text-gray-400 mr-2">account_circle</mat-icon>
             <mat-label>Dirección de correo</mat-label>
@@ -29,7 +28,7 @@
             <p class="m-0 text-red-600 font-bold text-md">{{messageError}}</p>
           </div>
 
-          <button mat-raised-button (click)="login()" class="bg-[#005883] text-white text-2xl" type="button" [disabled]="form.invalid">Ingresar</button>
+          <button mat-raised-button (click)="login()" class="bg-[#005883] text-white text-2xl" [disabled]="form.invalid">Ingresar</button>
         </form>
       </div>
     </div>

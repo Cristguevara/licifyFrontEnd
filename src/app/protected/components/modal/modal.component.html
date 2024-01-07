@@ -1,0 +1,19 @@
+<div class="h-auto w-[300px] sm:w-[400px]">
+  <div class="relative flex items-center justify-center h-[90px] px-8 pointer-events-none">
+    <div id="lottie-container-modal" class="w-auto h-full" [ngClass]="{'h-[130px]':type==='success'}"></div>
+  </div>
+  <div class="w-full" *ngIf="type===''">
+    <p class="text-center">¿Seguro?</p>
+    <div class="flex flex-row justify-between mt-4">
+      <button mat-raised-button (click)="dialogRef.close()" class="buttonRed">
+        Cancelar
+      </button>
+      <button mat-raised-button (click)="dialogRef.close('Confirmed')" class="buttonBlue">
+        Confirmar
+      </button>
+    </div>
+  </div>
+  <div class="w-full" *ngIf="type==='success'">
+    <p class="text-center">En un momento será redirigido a la página principal.</p>
+  </div>
+</div>

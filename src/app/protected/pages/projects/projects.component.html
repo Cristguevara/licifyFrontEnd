@@ -1,0 +1,36 @@
+<div class="w-full flex flex-col">
+  <div class="flex flex-row justify-end" *ngIf="builder">
+    <button mat-raised-button (click)="navigate('/nuevo-proyecto')" class="buttonBlue">
+      Nuevo proyecto
+    </button>
+  </div>
+
+  <div class="w-full flex flex-wrap justify-center gap-4 mt-4" *ngIf="!loading">
+    <div *ngFor="let project of projectList" class="p-4 border-2 border-[#005883] rounded-lg w-[300px]">
+      <p class="text-2xl font-semibold text-center mb-4">{{project.name}}</p>
+      <div class="flex flex-col items-center w-full">
+        <img src={{project.images[0]?.url}} alt="Sin imágen" class="h-[150px] w-auto"/>
+      </div>
+      <p class="mt-4">Fecha de inicio: {{project.startDate | date : "dd/MM/yyyy"}}</p>
+      <p>Fecha de fin: {{project.endDate | date : "dd/MM/yyyy"}}</p>
+      <div class="flex flex-row justify-between w-full mt-4" *ngIf="builder">
+        <button mat-raised-button class="buttonRed" (click)="openWarning(project._id)">
+          Eliminar
+        </button>
+        <button mat-raised-button class="buttonBlue" (click)="openDetailsProject(project._id)">
+          Ver
+        </button>
+      </div>
+
+      <div class="flex flex-row justify-end w-full mt-4" *ngIf="!builder">
+        <button mat-raised-button class="buttonBlue" *ngIf="project.applyed" (click)="openApplication(project._id)">
+          Ver aplicación
+        </button>
+        <button mat-raised-button class="buttonBlue" (click)="openProjectApplication(project._id)" *ngIf="!project.applyed">
+          Aplicar
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

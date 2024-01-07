@@ -17,7 +17,7 @@ export class AuthService {
 
   login(email:string, password:string){
 
-    const url  = `${this.baseUrl}/auth`
+    const url  = `${this.baseUrl}/auth/login`
     const body = {email, password}
 
     return this.http.post<any>(url, body).pipe(
@@ -25,8 +25,8 @@ export class AuthService {
         if(res.ok){
           localStorage.setItem('tokenDemo',res.token)
           this._user={
-            email : res.email,
-            uid   : res.uid
+            email   : res.email,
+            builder : res.builder,
           }
         }
       }),
@@ -45,7 +45,7 @@ export class AuthService {
         localStorage.setItem('tokenDemo',res.token)
         this._user={
           email : res.email,
-          uid   : res.uid
+          builder : res.builder
         }
         return res.ok
       }),

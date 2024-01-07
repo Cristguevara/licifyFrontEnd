@@ -1,5 +1,5 @@
 {
-  "name": "proyecto-demo",
+  "name": "licify-front",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -20,10 +20,8 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
-    "apexcharts": "^3.36.3",
-    "ng-apexcharts": "^1.7.4",
+    "lottie-web": "^5.12.2",
     "rxjs": "~7.5.0",
-    "swiper": "^8.4.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

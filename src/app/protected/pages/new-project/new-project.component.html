@@ -1,0 +1,71 @@
+<div class="flex flex-col">
+  <p class="text-4xl font-semibold text-center">Nuevo proyecto</p>
+  <div class="w-full flex flex-col items-center mt-4">
+    <div class="w-full max-w-[500px]">
+      <form [formGroup]="form" autocomplete="off">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Nombre del proyecto" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-full flex flex-row">
+          <mat-label>Fecha de inicio</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="startDate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-full flex flex-row">
+          <mat-label>Fecha final</mat-label>
+          <input matInput [matDatepicker]="pickerEnd" formControlName="endDate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+          <mat-datepicker #pickerEnd></mat-datepicker>
+        </mat-form-field>
+
+        <p>Imágenes</p>
+        <div class="flex flex-row items-center gap-4 mb-2 overflow-auto w-full">
+          <div *ngFor="let url of imagesUrls" >
+            <img [src]="url" alt="Preview" class="h-[180px] w-auto max-w-[400px!important]">
+          </div>
+        </div>
+        <input type="file" #filePicker (change)="onImagePicked($event)" class="hidden" multiple>
+        <button (click)="selectFiles()" mat-raised-button type="button" class="buttonBlue">Seleccionar imagenes</button>
+
+        <p class="mt-2">Ítems</p>
+        <div formArrayName="items"
+          *ngFor="let item of getControls(); let i = index;">
+          <div [formGroupName]="i" class="flex flex-row justify-between">
+            <mat-form-field appearance="outline" class="w-[44%]">
+              <mat-label>Nombre</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-[44%]">
+              <mat-label>Valor</mat-label>
+              <input matInput formControlName="value" type="number">
+            </mat-form-field>
+            <div class="w-[10%] flex flex-col items-center">
+              <button type="button" (click)="deleteItemGroup(i)" class="mt-[20px] bg-red-600 flex flex-col items-center rounded-lg px-1 py-1" *ngIf="i!==0">
+                <mat-icon class="material-icons-outlined text-white">delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <button mat-raised-button type="button" class="buttonBlue" (click)="addNewItemGroup()">
+          Agregar ítem
+        </button>
+        <p class="text-red-600" *ngIf="errors">{{msgError}}</p>
+        <div class="flex flex-row justify-between my-4">
+          <button mat-raised-button (click)="navigate('/')" class="buttonRed">
+            Cancelar
+          </button>
+          <button mat-raised-button type="submit" (click)="openWarning()" class="buttonBlue">
+            Crear
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

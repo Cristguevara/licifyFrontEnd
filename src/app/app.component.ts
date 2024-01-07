@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MenuResponsiveComponent } from './shared/menu-responsive/menu-responsive.component';
+//import { MenuResponsiveComponent } from './shared/menu-responsive/menu-responsive.component';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +12,13 @@ export class AppComponent {
   value = 'Clear me';
   constructor(public dialog: MatDialog) { }
 
-  openMenu(): void{
+  // openMenu(): void{
 
-    this.dialog.open(MenuResponsiveComponent, {
-      panelClass: 'menuRespondiveDialog',
-      position: {top:'0',left:'0'},
-    });
+  //   this.dialog.open(MenuResponsiveComponent, {
+  //     panelClass: 'menuRespondiveDialog',
+  //     position: {top:'0',left:'0'},
+  //   });
 
-  }
+  // }
 
 }

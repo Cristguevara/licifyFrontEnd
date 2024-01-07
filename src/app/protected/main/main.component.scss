@@ -1,0 +1,51 @@
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+  background: #005883 !important;
+  border-radius: 10px !important;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar {
+  width: 10px !important;
+}
+
+.rotateBubbles{
+  animation-duration: 10s;
+  animation-name: bubbles;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes bubbles {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg)
+  }
+}
+
+.rotateBubbles2{
+  animation-duration: 10s;
+  animation-name: bubbles;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+}
+
+.btn-transparent {
+  left: 5%;
+  position: relative;
+  height: 32px;
+  pointer-events: none;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 5%;
+}
+
+.indexZ{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 300;
+  left: 0;
+  pointer-events:none ;
+  background-color: white;
+}

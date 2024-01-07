@@ -1,22 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import lottie from 'lottie-web';
+import animationData from '../../../assets/animations/login.json';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit,AfterViewInit {
 
   hide         : boolean = true;
   messageError : string  = ''
   isError      : boolean = false
 
   form:FormGroup=this.fb.group({
-    email    : ['cristian@gmail.com', [Validators.required, Validators.email]],
-    password : ['123456', [Validators.required, Validators.minLength(6)]]
+    email    : ['constructor@gmail.com', [Validators.required, Validators.email]],
+    password : ['welcome', [Validators.required, Validators.minLength(6)]]
   })
 
   constructor(
@@ -24,6 +26,19 @@ export class LoginComponent implements OnInit {
     private router:Router,
     private authService:AuthService
   ) { }
+
+  ngAfterViewInit(): void {
+    const container = document.getElementById('lottie-container-login');
+    if (container) {
+      lottie.loadAnimation({
+        container: container,
+        animationData: JSON.parse(JSON.stringify(animationData)),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+      });
+    }
+  }
 
   ngOnInit(): void {
     this.email?.valueChanges.subscribe( value => {
@@ -43,13 +58,13 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(email,password).subscribe(ok => {
       if(ok===true){
-        this.router.navigate(['/Componentes'])
+        this.router.navigate(['/'])
       }else{
         this.messageError = ok
         this.isError      = true
       }
     })
-    
+
   }
 
 }

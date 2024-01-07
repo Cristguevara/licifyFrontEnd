@@ -14,7 +14,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { NgApexchartsModule } from "ng-apexcharts";
 import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
@@ -35,7 +34,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatNativeDateModule,
     MatDialogModule,
     MatExpansionModule,
-    NgApexchartsModule,
     MatTooltipModule,
     HttpClientModule
   ],

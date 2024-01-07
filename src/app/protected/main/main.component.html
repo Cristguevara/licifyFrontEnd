@@ -1,0 +1,96 @@
+<div class="w-full flex flex-col items-center">
+  <!-- <div class="fixed h-screen w-screen top-0 left-0 flex flex-col items-center indexZ" *ngIf="owl">
+    <div id="lottie-container-main" class="w-full h-full" ></div>
+  </div> -->
+  <div class="flex flex-col w-full">
+    <div class="flex flex-row items-center justify-around bg-[#005883] relative overflow-hidden">
+      <div class="hidden sm:block absolute bottom-[-30px] right-[-50px]">
+        <div class="w-[300px] h-[300px] relative rotateBubbles opacity-50">
+          <div class="w-full h-full absolute">
+            <div class="absolute w-[18%] h-[18%] rounded-full bg-white right-[41%]">
+            </div>
+            <div class="absolute w-[18%] h-[18%] rounded-full bg-white right-[41%] bottom-0">
+            </div>
+            <div class="absolute w-[18%] h-[18%] rounded-full bg-white top-[41%] right-0">
+            </div>
+            <div class="absolute w-[18%] h-[18%] rounded-full bg-white top-[41%] left-0">
+            </div>
+          </div>
+          <div class="w-full h-full rotate-45">
+            <div class="absolute w-[18%] h-[18%] rounded-full bg-white right-[41%]">
+            </div>
+            <div class="absolute w-[18%] h-[18%] rounded-full bg-white right-[41%] bottom-0">
+            </div>
+            <div class="absolute w-[18%] h-[18%] rounded-full bg-white top-[41%] right-0">
+            </div>
+            <div class="absolute w-[18%] h-[18%] rounded-full bg-white top-[41%] left-0">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden sm:block absolute bottom-[15px] right-[0px]">
+        <div class="w-[150px] h-[150px] relative rotateBubbles2 opacity-50">
+          <div class="w-full h-full absolute">
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white right-[42%]">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white right-[42%] bottom-0">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white top-[42%] right-0">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white top-[42%] left-0">
+            </div>
+          </div>
+          <div class="w-full h-full rotate-45">
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white right-[42%]">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white right-[42%] bottom-0">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white top-[42%] right-0">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white top-[42%] left-0">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class=" hidden sm:block w-[114px] h-[64px] relative">
+        <div class="w-[114px] h-[114px] relative top-[0px] rotate-[-15deg] origin-right">
+          <div class="w-full h-full absolute">
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white right-[42%]">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white right-[42%] bottom-0">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white top-[42%] right-0">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white top-[42%] left-0">
+            </div>
+          </div>
+          <div class="w-full h-full rotate-45">
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white right-[42%]">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white right-[42%] bottom-0">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white top-[42%] right-0">
+            </div>
+            <div class="absolute w-[16%] h-[16%] rounded-full bg-white top-[42%] left-0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-2xl lg:text-4xl  font-bold text-white text-center">Licify App</p>
+      <div class="flex flex-row items-center h-[64px]">
+        <button mat-raised-button (click)="logOut()" class="buttonWhite">
+          Salir
+        </button>
+      </div>
+    </div>
+
+    <div class="w-full flex flex-col items-center h-[calc(100vh-64px)] overflow-y-auto">
+      <div class="w-full max-w-[1000px] mt-4 px-4">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+  </div>
+</div>
