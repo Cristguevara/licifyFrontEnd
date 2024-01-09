@@ -3,6 +3,13 @@ import { Injectable } from '@angular/core';
 import { catchError, map, of, tap, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
+interface LoginResponse {
+  ok:boolean,
+  token: string,
+  email: string,
+  builder: boolean,
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +27,7 @@ export class AuthService {
     const url  = `${this.baseUrl}/auth/login`
     const body = {email, password}
 
-    return this.http.post<any>(url, body).pipe(
+    return this.http.post<LoginResponse>(url, body).pipe(
       tap(res => {
         if(res.ok){
           localStorage.setItem('tokenDemo',res.token)
@@ -40,7 +47,7 @@ export class AuthService {
     const url     = `${this.baseUrl}/auth/renew`
     const headers = new HttpHeaders().set( 'x-token', localStorage.getItem( 'tokenDemo' ) || '' )
 
-    return this.http.get<any>( url , { headers } ).pipe(
+    return this.http.get<LoginResponse>( url , { headers } ).pipe(
       map( res => {
         localStorage.setItem('tokenDemo',res.token)
         this._user={

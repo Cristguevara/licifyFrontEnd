@@ -27,6 +27,14 @@ interface AllApplicationsResponse {
   applications:Application[]
 }
 
+interface ProjectInfo {
+  name:string,
+  startDate:Date,
+  endDate:Date,
+  images:{image:File}[]
+  items: {name:string,value:number}[]
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -47,7 +55,7 @@ export class ProjectsService {
     return this.http.post<{res: boolean,project:Project}>(url,{id:id})
   }
 
-  createProyect(info:any){
+  createProyect(info:ProjectInfo){
 
     const images = info.images
     const projectInfo = {
@@ -65,7 +73,7 @@ export class ProjectsService {
       formData.append('images',img.image)
     })
 
-    return this.http.post<any>(url, formData).pipe(
+    return this.http.post<{ok:boolean}>(url, formData).pipe(
       map( res => res.ok ),
       catchError( err => of(err.error.msg) )
     )
@@ -77,7 +85,7 @@ export class ProjectsService {
 
     const url  = `${this.baseUrl}/projects/delete`
 
-    return this.http.post<any>(url, body).pipe(
+    return this.http.post<{ok:boolean}>(url, body).pipe(
       map( res => res.ok ),
       catchError( err => of(err.error.msg) )
     )
