@@ -28,7 +28,7 @@
             <p class="m-0 text-red-600 font-bold text-md">{{messageError}}</p>
           </div>
 
-          <button mat-raised-button (click)="login()" class="bg-[#005883] text-white text-2xl" [disabled]="form.invalid">Ingresar</button>
+          <button mat-raised-button (click)="login()" class="bg-[#005883] text-white text-2xl" [disabled]="form.invalid || loading">Ingresar</button>
         </form>
       </div>
     </div>

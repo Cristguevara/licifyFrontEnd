@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit,AfterViewInit {
   hide         : boolean = true;
   messageError : string  = ''
   isError      : boolean = false
+  loading      : boolean = false
 
   form:FormGroup=this.fb.group({
     email    : ['', [Validators.required, Validators.email]],
@@ -56,12 +57,17 @@ export class LoginComponent implements OnInit,AfterViewInit {
 
     const { email, password } = this.form.value
 
+    this.form.disable()
+    this.loading = true
+
     this.authService.login(email,password).subscribe(ok => {
       if(ok===true){
         this.router.navigate(['/'])
       }else{
         this.messageError = ok
         this.isError      = true
+        this.form.enable()
+        this.loading = false
       }
     })
 
